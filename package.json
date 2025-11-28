@@ -1,0 +1,32 @@
+{
+  "name": "anshu-portfolio",
+  "version": "2.0.0",
+  "description": "Professional portfolio website for Anshu Kumar with React and Light Rays",
+  "main": "index-react.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "portfolio",
+    "typescript",
+    "react",
+    "web-development"
+  ],
+  "author": "Anshu Kumar",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "ogl": "^1.0.11",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

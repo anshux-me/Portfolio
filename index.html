@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anshu Kumar - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Hero Section with Search Navigation -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Anshu Kumar</h1>
+        
+        <!-- Search Navigation Component -->
+        <div class="search-container">
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput" 
+            placeholder="What's up?"
+            autocomplete="off"
+          >
+
+          <!-- Search Results / Navigation Menu -->
+          <div class="search-results" id="searchResults">
+            <div class="result-item" data-section="about">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">About</div>
+                <div class="result-description">you can call me Anshu</div>
+              </div>
+            </div>
+
+            <div class="result-item" data-section="work">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 3h-2V2h-4v1H8"></path>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">Work</div>
+                <div class="result-description">currently open to opportunities</div>
+              </div>
+            </div>
+
+            <div class="result-item" data-section="experiments">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">Experiments</div>
+                <div class="result-description">exploring new ideas</div>
+              </div>
+            </div>
+
+            <div class="result-item" data-section="achievements">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6-4 6 4"></path>
+                  <path d="M6 9v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9"></path>
+                  <path d="M6 13h12"></path>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">Achievements</div>
+                <div class="result-description">milestones & recognitions</div>
+              </div>
+            </div>
+
+            <div class="result-item" data-section="colophon">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <path d="M12 1v6m0 6v6"></path>
+                  <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                  <path d="M1 12h6m6 0h6"></path>
+                  <path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">Colophon</div>
+                <div class="result-description">how this portfolio was built?</div>
+              </div>
+            </div>
+
+            <div class="result-item" data-section="now-playing">
+              <div class="result-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 8 6 16 11 19 11 5"></polygon>
+                  <polygon points="17 5 12 8 12 16 17 19 17 5"></polygon>
+                </svg>
+              </div>
+              <div class="result-content">
+                <div class="result-title">Now Playing</div>
+                <div class="result-description">mama by rudy mancuso</div>
+              </div>
+            </div>
+
+            <div class="search-footer">
+              <span class="footer-text">Enjoy your Saturday!</span>
+              <span class="footer-time" id="timeDisplay">00:00 GMT+5:30</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="section-content">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Pixels • Product • People • Pizza</p>
+        <div class="about-text">
+          <p>
+            Hi! I'm Anshu, a data analyst and developer with a passion for building innovative solutions. 
+            I specialize in turning complex data into actionable insights and creating intuitive user experiences.
+          </p>
+          <p>
+            Throughout my journey, I've been guided by a simple belief: technology should feel natural and intuitive. 
+            When not in front of a digital screen, you'll probably find me exploring new things or contributing to open-source projects.
+          </p>
+        </div>
+        <div class="about-meta">
+          <div class="meta-item">
+            <span class="meta-label">Currently Based In</span>
+            <span class="meta-value">India</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Education</span>
+            <span class="meta-value"><a href="#work">SRM University</a></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Passionate About</span>
+            <span class="meta-value">Data • Analytics • Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="section work-section">
+      <div class="section-content">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="work-items">
+          <div class="work-item">
+            <div class="work-company">Data Analyst</div>
+            <div class="work-position">Currently Open to Opportunities</div>
+            <div class="work-description">
+              Seeking roles in data analysis, business intelligence, or analytics engineering.
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-company">Analytics & Development</div>
+            <div class="work-position">Freelance Projects</div>
+            <div class="work-description">
+              Building custom dashboards and data solutions for various clients and projects.
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-company">B.Tech Computer Science</div>
+            <div class="work-position">SRM University (2023 - 2027)</div>
+            <div class="work-description">
+              Specializing in AI & Machine Learning with focus on data science applications.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiments Section -->
+    <section id="experiments" class="section experiments-section">
+      <div class="section-content">
+        <h2 class="section-title">Experiments & Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-placeholder">Project 1</div>
+            <h3 class="project-title">Data Dashboard</h3>
+            <p class="project-description">Interactive data visualization platform with real-time analytics.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-placeholder">Project 2</div>
+            <h3 class="project-title">Analytics Engine</h3>
+            <p class="project-description">Machine learning-powered customer behavior prediction system.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-placeholder">Project 3</div>
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-description">Modern portfolio built with TypeScript and vanilla JavaScript.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-placeholder">Project 4</div>
+            <h3 class="project-title">Data Insights Tool</h3>
+            <p class="project-description">AI-powered tool for automatic insight generation from datasets.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-placeholder">Project 5</div>
+            <h3 class="project-title">Business Analytics</h3>
+            <p class="project-description">Comprehensive analytics solution for tracking KPIs and metrics.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-placeholder">Project 6</div>
+            <h3 class="project-title">Web Application</h3>
+            <p class="project-description">Full-stack application with data visualization and reporting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements-section">
+      <div class="section-content">
+        <h2 class="section-title">Recent Achievements</h2>
+        <div class="achievements-list">
+          <div class="achievement-item">
+            <span class="achievement-icon">🏆</span>
+            <div class="achievement-content">
+              <h3 class="achievement-title">Hackathon Winner</h3>
+              <p class="achievement-description">First place in Data Analytics Challenge 2024</p>
+            </div>
+          </div>
+
+          <div class="achievement-item">
+            <span class="achievement-icon">⭐</span>
+            <div class="achievement-content">
+              <h3 class="achievement-title">Open Source Contributor</h3>
+              <p class="achievement-description">Active contributor to multiple data science projects</p>
+            </div>
+          </div>
+
+          <div class="achievement-item">
+            <span class="achievement-icon">📜</span>
+            <div class="achievement-content">
+              <h3 class="achievement-title">Certifications</h3>
+              <p class="achievement-description">Advanced Data Analytics & Business Intelligence</p>
+            </div>
+          </div>
+
+          <div class="achievement-item">
+            <span class="achievement-icon">🎓</span>
+            <div class="achievement-content">
+              <h3 class="achievement-title">Academic Excellence</h3>
+              <p class="achievement-description">Dean's List & Merit Scholarship Recipient</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colophon Section -->
+    <section id="colophon" class="section colophon-section">
+      <div class="section-content">
+        <h2 class="section-title">Colophon</h2>
+        <div class="colophon-content">
+          <p class="colophon-definition">
+            <strong>Noun:</strong> a brief statement at a book's end detailing its production
+          </p>
+          <p class="colophon-description">
+            Basically, it's a fancy word that I'm using to describe this website. This portfolio is crafted with 
+            <strong>TypeScript</strong> and <strong>Vanilla JavaScript</strong>, designed with clean typography and 
+            subtle micro-interactions. The design emphasizes minimalism and elegant simplicity.
+          </p>
+          <div class="colophon-specs">
+            <div class="spec-item">
+              <span class="spec-label">Fonts:</span>
+              <span class="spec-value">Playfair Display • Inter Sans</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Built With:</span>
+              <span class="spec-value">HTML • CSS • TypeScript</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Version:</span>
+              <span class="spec-value">1.0.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Now Playing Section -->
+    <section id="now-playing" class="section now-playing-section">
+      <div class="section-content">
+        <h2 class="section-title">Now Playing</h2>
+        <div class="player-container">
+          <div class="player-controls">
+            <button class="play-btn">▶</button>
+          </div>
+          <div class="player-info">
+            <div class="player-title">Mama</div>
+            <div class="player-artist">Rudy Mancuso</div>
+          </div>
+          <div class="player-time">
+            <span class="current-time">0:00</span>
+            <span class="total-time">3:45</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Anshu Kumar. Stay hydrated y'all 💧</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+      <a href="mailto:anshu@example.com" aria-label="Email">@</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
