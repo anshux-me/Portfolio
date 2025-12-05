@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import img1 from './components/img1.jpg';
 import LightRays from './components/LightRays';
 import './App.css';
 
@@ -110,6 +111,46 @@ const App: React.FC = () => {
     scrollToSection(sectionId);
   };
 
+  // Projects data and filtering
+  const projectFilters = ['All Projects', 'ML', 'SQL', 'Excel', 'Power BI', 'Others'] as const;
+  type Filter = typeof projectFilters[number];
+  const [activeFilter, setActiveFilter] = useState<Filter>('All Projects');
+
+  const projects = [
+    {
+      title: 'EchoAI',
+      description:
+        'EchoAI is an AI-powered language pronunciation trainer that helps users improve spoken accuracy by providing text-to-speech examples, analyzing user speech, scoring pronunciation quality, and tracking progress with real-time feedback',
+      tags: ['Python', 'FastAPI', 'PyAudio', 'Database', 'HTML','CSS'],
+      category: 'ML' as Filter,
+    },
+    {
+      title: "Revive",
+      description:
+        'Revive is a clean and intuitive fitness-tracking application that allows users to manage daily tasks, follow guided workouts, and monitor health metrics such as BMI—helping users stay organized and consistent in their fitness journey.',
+      tags: ['HTML', 'JavaScript', 'Tailwind CSS'],
+      category: 'Others' as Filter,
+    },
+    {
+      title: 'Decibel Detect',
+      description:
+        'Bike rental management: browsing, reservations, payments, admin dashboard, role-based access, damage reporting, dark/light themes.',
+      tags: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS'],
+      category: 'Others' as Filter,
+    },
+    {
+      title: 'Process Performance analyzer',
+      description:
+        'Developed Process Performance Analyzer, a cross-platform tool designed to monitor system processes, track performance load, and alert users when the system is overutilized or when unused processes occupy resources..',
+      tags: ['Python', 'CSS3', 'Lucide React', 'Platform Module', 'Psutil'],
+      category: 'ML' as Filter,
+    },
+  ];
+
+  const visibleProjects = projects.filter((p) =>
+    activeFilter === 'All Projects' ? true : p.category === activeFilter
+  );
+
   return (
     <main className="container">
       {/* Hero Section */}
@@ -123,7 +164,7 @@ const App: React.FC = () => {
               ref={searchInputRef}
               type="text"
               className="search-input"
-              placeholder="What's up?"
+              placeholder="Hey"
               autoComplete="off"
             />
 
@@ -163,7 +204,7 @@ const App: React.FC = () => {
       <section id="about" className="section about-section">
         <div className="section-content">
           <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">Pixels • Product • People • Pizza</p>
+          
           <div className="about-text">
             <p>
               Hi! I'm Anshu, a data analyst and developer with a passion for building innovative solutions.
@@ -174,20 +215,89 @@ const App: React.FC = () => {
               When not in front of a digital screen, you'll probably find me exploring new things or contributing to open-source projects.
             </p>
           </div>
-          <div className="about-meta">
-            <div className="meta-item">
-              <span className="meta-label">Currently Based In</span>
-              <span className="meta-value">India</span>
-            </div>
-            <div className="meta-item">
-              <span className="meta-label">Education</span>
-              <span className="meta-value">LPU</span>
-            </div>
-            <div className="meta-item">
-              <span className="meta-label">Passionate About</span>
-              <span className="meta-value">Data • Analytics • Problem Solving</span>
+
+          {/* Technical Skills */}
+          <div className="technical-skills">
+            <h2 className="skills-subtitle">Technical Skills</h2>
+            
+            <div className="skills-grid">
+              <div className="skill-category">
+                <h3>Languages</h3>
+                <div className="skill-items">
+                  <span>Python,</span>
+                  <span>,JavaScript</span>
+                  <span>,TypeScript</span>
+                  <span>,Java</span>
+                  <span>,C++</span>
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>Frontend</h4>
+                <div className="skill-items">
+                  <span>React</span>
+                  <span>,Next.js</span>
+                  <span>,HTML/CSS3</span>
+                  <span>,Tailwind CSS</span>
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>Backend</h4>
+                <div className="skill-items">
+                  <span>Node.js</span>
+                  
+                  <span>,Flask</span>
+                  <span>FastAPI</span>
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>Databases</h4>
+                <div className="skill-items">
+                  
+                  <span>Firebase</span>
+                  <span>,MySQL</span>
+                  <span>SQL</span>
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>AI/ML</h4>
+                <div className="skill-items">
+                  <span>HuggingFace Transformers</span>
+                  <span>,PyTorch</span>
+                  <span>NLP</span>
+                  
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>Tools & Platforms</h4>
+                <div className="skill-items">
+                  <span>Git</span>
+                  <span>,Docker</span>
+                  <span>,REST APIs</span>
+                  
+                  <span>,Vercel</span>
+                
+                </div>
+              </div>
+
+              <div className="skill-category">
+                <h4>Soft Skills</h4>
+                <div className="skill-items">
+                  <span>Problem Solving</span>
+                  <span>,Technical Leadership</span>
+                  <span>,Team Collaboration</span>
+                  <span>,Project Management</span>
+                  <span>,Critical Thinking</span>
+                  <span>,Communication</span>
+                </div>
+              </div>
             </div>
           </div>
+          
         </div>
       </section>
 
@@ -195,44 +305,56 @@ const App: React.FC = () => {
       <section id="work" className="section experiments-section">
         <div className="section-content">
           <h2 className="section-title">Projects</h2>
+          {/* Filter Bar */}
+          <div className="filter-bar" role="tablist" aria-label="Project filters">
+            {projectFilters.map((f) => (
+              <button
+                key={f}
+                className={`filter-chip ${activeFilter === f ? 'active' : ''}`}
+                onClick={() => setActiveFilter(f)}
+                role="tab"
+                aria-selected={activeFilter === f}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
           <div className="projects-grid">
-            {['Data Dashboard', 'Analytics Engine', 'Portfolio Website', 'Data Insights Tool', 'Business Analytics', 'Web Application'].map((title, i) => (
-              <div key={i} className="project-card">
-                <div className="project-placeholder">Project {i + 1}</div>
-                <h3 className="project-title">{title}</h3>
-                <p className="project-description">
-                  {i === 0 && 'Interactive data visualization platform with real-time analytics.'}
-                  {i === 1 && 'Machine learning-powered customer behavior prediction system.'}
-                  {i === 2 && 'Modern portfolio built with TypeScript and vanilla JavaScript.'}
-                  {i === 3 && 'AI-powered tool for automatic insight generation from datasets.'}
-                  {i === 4 && 'Comprehensive analytics solution for tracking KPIs and metrics.'}
-                  {i === 5 && 'Full-stack application with data visualization and reporting.'}
-                </p>
-              </div>
+            {visibleProjects.map((proj) => (
+              <article key={proj.title} className="project-card">
+                <h3 className="project-title">{proj.title}</h3>
+                <p className="project-description">{proj.description}</p>
+                <div className="project-tags">
+                  {proj.tags.map((t) => (
+                    <span key={t} className="project-tag">{t}</span>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Library Section (renamed from Achievements) */}
+      {/* Library Section */}
       <section id="library" className="section achievements-section">
         <div className="section-content">
           <h2 className="section-title">Anshu's Library</h2>
-          <div className="achievements-list">
-            {[
-              { icon: '🏆', title: 'Hackathon Winner', desc: 'First place in Data Analytics Challenge 2024' },
-              { icon: '⭐', title: 'Open Source Contributor', desc: 'Active contributor to multiple data science projects' },
-              { icon: '📜', title: 'Certifications', desc: 'Advanced Data Analytics & Business Intelligence' },
-              { icon: '🎓', title: 'Academic Excellence', desc: 'Dean\'s List & Merit Scholarship Recipient' }
-            ].map((achievement, i) => (
-              <div key={i} className="achievement-item">
-                <span className="achievement-icon">{achievement.icon}</span>
-                <div className="achievement-content">
-                  <h3 className="achievement-title">{achievement.title}</h3>
-                  <p className="achievement-description">{achievement.desc}</p>
-                </div>
+          <div className="horizontal-sections">
+            <div className="hsection">
+              <h3 className="hsection-title">Currently expanding my knowledge in</h3>
+              <p className="hsection-text">SVM algorithm, Typescript and Data visualization with Power BI</p>
+            </div>
+            <div className="hsection">
+              <h3 className="hsection-title">Currently reading</h3>
+              <div className="reading-row">
+                <img src={img1} alt="Currently reading cover" className="reading-img" />
+                <p className="reading-text">Can't Hurt Me: Master Your Mind and Defy the Odds</p>
+                {/* <h4>Book by David Goggins</h4> */}
+
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -241,7 +363,7 @@ const App: React.FC = () => {
       <section id="contact" className="section contact-section">
         <div className="section-content">
           <h2 className="section-title">Contact</h2>
-          <p className="contact-subtitle">Let's collaborate! I'm always interested in new projects and opportunities. Feel free to reach out.</p>
+          <p className="contact-subtitle">Let's connect, Feel free to reach out.</p>
           <form className="contact-form">
             <div className="form-group">
               <label htmlFor="name" className="form-label">Name</label>
