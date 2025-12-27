@@ -4,13 +4,39 @@
   box-sizing: border-box;
 }
 
+/*
+  APP CSS - Single Source of Truth
+
+  Note: `style.css` was removed. This file (`src/App.css`) contains
+  all global styles for the site. Section comment blocks below show
+  the purpose of each CSS region so you can quickly find and edit
+  visual rules for a given part of the site.
+
+  Sections:
+  - :root / variables: color tokens used throughout the app
+  - body / layout: base font, background, container sizing
+  - Hero: landing title, subtitle, and positioning for LightRays
+  - Search Navigation Component: static 'Hey' card and dropdown
+  - Sections: generic section paddings and titles
+  - Technical Skills: skills grid and category styles
+  - Projects Grid: filter bar and project card styles
+  - Contact Section: form and inputs
+  - Footer: page footer styles
+  - Library Horizontal Sections: stacked library cards
+  - Social Navbar: fixed vertical social links
+  - Responsive Design: mobile-specific fallbacks
+
+  Keep this file as the single stylesheet. Use comments to locate
+  the relevant area to change colors, spacing, or typography.
+*/
+
 :root {
-  --bg: #353331;
-  --text-primary: #1a1a1a;
-  --text-secondary: #666;
-  --text-light: #999;
-  --border: #e0e0e0;
-  --accent: #4f46e5;
+  --bg: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-light: #999999;
+  --border: #222222;
+  --accent: #303031;
 }
 
 html {
@@ -19,7 +45,7 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #353331;
+  background: #000000;
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +57,15 @@ body {
   padding: 0 24px;
 }
 
+/* Make container a positioned stacking context so LightRays absolute canvas covers full page */
+.container {
+  position: relative;
+}
+
 /* ==================== Hero Section ==================== */
+/* Use: landing / hero area that contains the big title and subtitle.
+  The LightRays canvas is positioned behind the `.hero` content.
+  Edit `.hero-title` and `.hero-subtitle` typography here. */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -58,13 +92,13 @@ body {
   max-width: 700px;
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-title {
   font-family: 'Caveat', 'Playfair Display', cursive;
   font-size: clamp(60px, 12vw, 140px);
-  font-weight: 450;
+  font-weight: 300;
   margin-bottom: 16px;
   letter-spacing: -1px;
   line-height: 1;
@@ -79,12 +113,16 @@ body {
 }
 
 /* ==================== Search Navigation Component ==================== */
+/* Use: small static search/navigation card in the hero.
+  This area contains the 'Hey' static text and the search results
+  dropdown. Update `.search-container`, `.search-input-static`, and
+  `.search-results` styling here. */
 .search-container {
   position: relative;
   max-width: 520px;
   margin: 0 auto;
-  background: #f5f5f5;
-  border: 1px solid #e8e8e8;
+  background: #141414;
+  border: 1px solid #141414;
   border-radius: 6px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -112,6 +150,33 @@ body {
   border-bottom-color: var(--accent);
   background: #fafafa;
   box-shadow: none;
+}
+
+.search-input-static {
+  font-size: 1rem;
+  color: #111;
+  padding: 12px 14px;
+  background: transparent;
+}
+
+/* Simple hero nav to make section links visible */
+.hero-nav {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hero-nav button {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.hero-nav button:hover {
+  background: rgba(255,255,255,0.06);
 }
 
 /* Search Results Dropdown */
@@ -205,6 +270,8 @@ body {
 }
 
 /* ==================== Sections ==================== */
+/* Use: generic sections wrapper for About / Skills / Projects etc.
+   Controls vertical spacing for all major page sections. */
 .section {
   padding: 120px 24px;
 }
@@ -212,6 +279,8 @@ body {
 .section-content {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 
 .section-title {
@@ -220,7 +289,7 @@ body {
   font-weight: 700;
   margin-bottom: 24px;
   letter-spacing: -1px;
-  color: white;
+  color: rgb(22, 22, 22);
 }
 
 .section-subtitle {
@@ -279,6 +348,9 @@ body {
 }
 
 /* ==================== Technical Skills ==================== */
+/* Use: styles for the technical skills section. The `.skills-grid`
+   provides a 2-column layout and `.skill-items` lists the simple
+   text-only skills. */
 .technical-skills {
   margin-top: 64px;
   padding-top: 48px;
@@ -330,6 +402,8 @@ body {
 }
 
 /* ==================== Projects Grid ==================== */
+/* Use: project listing and filter controls. `.filter-bar` centers
+   the chips and `.projects-grid` defines the two-up card layout. */
 
 .filter-bar {
   display: flex;
@@ -439,6 +513,8 @@ body {
 
 
 /* ==================== Contact Section ==================== */
+/* Use: contact form styles and input states. Update form spacing,
+   colors, and focus states for inputs and the submit button here. */
 .contact-section {
   color: white;
 }
@@ -527,12 +603,19 @@ body {
 }
 
 /* ==================== Footer ==================== */
+/* Use: bottom of page footer styles (copyrights, summary).
+   Keeps z-index high so it sits above LightRays when necessary. */
 .footer {
   padding: 48px 24px;
   border-top: 1px solid #555;
   text-align: center;
+  position: relative;
+  z-index: 3;
 }
 /* ==================== Library Horizontal Sections ==================== */
+/* Use: stacked library/reading cards such as "Currently reading"
+   and "Currently expanding my knowledge in". `.hsection` is the
+   individual card styling and `.reading-row` formats cover + text. */
 .horizontal-sections {
   display: grid;
   grid-template-columns: 1fr;
@@ -584,6 +667,8 @@ body {
 }
 
 /* ==================== Vertical Social Icons Navigation Bar - Left Side ==================== */
+/* Use: fixed left-side social navigation. Keep these styles small
+   and simple so links are visible on dark backgrounds. */
 .social-navbar {
   position: fixed;
   left: 40px;
@@ -648,7 +733,7 @@ body {
   }
 
   .hero-title {
-    font-size: clamp(32px, 10vw, 56px);
+    font-size: clamp(25px, 10vw, 50px);
   }
 
   .section-title {
@@ -670,7 +755,7 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 16px;
+    padding: 40px 3px;
   }
 
   .section {
@@ -678,7 +763,7 @@ body {
   }
 
   .hero-subtitle {
-    margin-bottom: 32px;
+    margin-bottom: 0px;
   }
 
   .search-results {
