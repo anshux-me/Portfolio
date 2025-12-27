@@ -172,7 +172,7 @@ MIT License - feel free to use this portfolio as a template
 
 **Anshu Kumar**
 - GitHub: [@anshukr384](https://github.com/anshukr384)
-- Email: anshu@example.com
+- Email: anshukr384@gmail.com
 
 ## Support
 
