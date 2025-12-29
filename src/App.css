@@ -827,3 +827,111 @@ body {
     margin-bottom: 20px;
   }
 }
+
+/* Additional responsive rules to improve layout across tablets and phones */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding-top: calc(60px + 6vh);
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 10vw, 90px);
+  }
+
+  /* Make search / nav box narrower on tablets and take most of the width */
+  .search-container {
+    max-width: 88%;
+  }
+
+  /* Skills: switch to single column on medium screens for readability */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Projects grid: stack into 1 column for tablets */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Slightly increase spacing for skill chips on touch devices */
+  .skill-items {
+    gap: 16px;
+  }
+
+  /* Make the left social navbar less intrusive */
+  .social-navbar {
+    left: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding-top: calc(40px + 8vh);
+  }
+
+  .hero-content {
+    max-width: 640px;
+    padding: 0 12px;
+  }
+
+  .search-container {
+    max-width: 96%;
+  }
+
+  /* Ensure search dropdown stretches to container width on mobile */
+  .search-results {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Stack reading row vertically on small screens */
+  .reading-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reading-img {
+    width: 86px;
+    height: 86px;
+  }
+
+  /* Reduce project card padding so content fits better */
+  .project-title {
+    padding: 12px 12px 6px;
+  }
+
+  /* Hide social navbar on smaller phones if still visible */
+  @media (max-width: 480px) {
+    .social-navbar { display: none; }
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: clamp(24px, 10vw, 44px);
+  }
+
+  .skills-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .skill-item {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .filter-chip {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
