@@ -328,17 +328,7 @@ const App: React.FC = () => {
                       { name: 'AWS', Icon: Cloud },
                     ],
                   },
-                  {
-                    title: 'Soft Skills',
-                    items: [
-                      { name: 'Problem Solving' },
-                      { name: 'Technical Leadership' },
-                      { name: 'Team Collaboration' },
-                      { name: 'Project Management' },
-                      { name: 'Critical Thinking' },
-                      { name: 'Communication' },
-                    ],
-                  },
+                  
                 ]
               ).map((cat) => (
                 <div key={cat.title} className="skill-category">
