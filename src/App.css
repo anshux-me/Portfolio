@@ -119,8 +119,7 @@ body {
   `.search-results` styling here. */
 .search-container {
   position: relative;
-  /* narrower but taller: reduce breadth and increase vertical capacity */
-  max-width: 420px;
+  max-width: 520px;
   margin: 0 auto;
   background: #141414;
   border: 1px solid #141414;
@@ -398,7 +397,7 @@ body {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 40px; /* restored larger spacing between categories */
 }
 
 .skill-category {
@@ -414,22 +413,23 @@ body {
   font-size: 1rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: 20px; /* slightly larger gap below the category title */
 }
 
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 18px; /* increase spacing between chips */
 }
 
 .skill-item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: transparent;
   color: #ccc;
-  padding: 6px 8px;
+  padding: 8px 12px; /* larger click area and visual padding */
+  border-radius: 6px;
 }
 
 .skill-icon {
@@ -439,7 +439,7 @@ body {
 }
 
 .skill-name {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .skill-category:hover {
@@ -563,8 +563,8 @@ body {
 .contact-section {
   color: white;
 }
-
-.contact-subtitle {
+/* .section-title */
+.section-content {
   font-size: 1.05rem;
   margin-left: 150px;
   color: #ccc;
@@ -625,7 +625,7 @@ body {
 
 .submit-btn {
   padding: 14px 32px;
-  background: var(--accent);
+  background: black;
   color: white;
   border: none;
   border-radius: 6px;

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import LightRays from './components/LightRays';
 import './App.css';
 
@@ -15,6 +16,33 @@ import {
   Terminal,
   Cloud,
 } from 'lucide-react';
+
+// Brand icons for tech stacks
+import {
+  SiPython,
+  SiCplusplus,
+  SiJavascript,
+  SiTypescript,
+  SiJava,
+  SiReact,
+  SiNextdotjs,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiFlask,
+  SiFastapi,
+  SiMongodb,
+  SiFirebase,
+  SiMysql,
+  SiPytorch,
+  SiHuggingface,
+  SiGit,
+  SiDocker,
+  SiVercel,
+  SiAmazonaws,
+} from 'react-icons/si';
 
 interface NavLink {
   id: string;
@@ -100,6 +128,12 @@ const App: React.FC = () => {
     };
 
     updateTime();
+    // initialize EmailJS with the public key so sendForm works without passing key every time
+    try {
+      emailjs.init('RxnQkd68McQZKFvcd');
+    } catch (e) {
+      // ignore if init is not available during tests or before install
+    }
     const interval = setInterval(updateTime, 60000);
 
     return () => clearInterval(interval);
@@ -163,6 +197,34 @@ const App: React.FC = () => {
   const visibleProjects = projects.filter((p) =>
     activeFilter === 'All Projects' ? true : p.category === activeFilter
   );
+
+  // Contact form ref + status
+  const contactFormRef = useRef<HTMLFormElement | null>(null);
+  const [sending, setSending] = useState(false);
+  const [sendResult, setSendResult] = useState<string | null>(null);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!contactFormRef.current) return;
+    setSending(true);
+    setSendResult(null);
+    try {
+      await emailjs.sendForm(
+        'service_lf1wyti', // service ID (provided)
+        'template_h2vnari', // template ID (provided)
+        contactFormRef.current,
+        'RxnQkd68McQZKFvcd' // public key (provided)
+      );
+      setSendResult('Message sent — thank you!');
+      contactFormRef.current.reset();
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Email send error', err);
+      setSendResult('Failed to send message. Please try again later.');
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <main className="container">
@@ -311,7 +373,13 @@ const App: React.FC = () => {
                   <div className="skill-items">
                     {cat.items.map((it: any) => (
                       <span key={it.name} className="skill-item">
-                        {it.Icon ? <it.Icon className="skill-icon" /> : null}
+                        {it.BrandIcon ? (
+                          // brand-specific icon (preferred)
+                          <it.BrandIcon className="skill-icon" />
+                        ) : it.Icon ? (
+                          // fallback to lucide icon
+                          <it.Icon className="skill-icon" />
+                        ) : null}
                         <span className="skill-name">{it.name}</span>
                       </span>
                     ))}
@@ -391,39 +459,48 @@ const App: React.FC = () => {
             <div className="section-content">
               <h2 className="section-title">Contact</h2>
               <p className="contact-subtitle">Let's connect, Feel free to reach out.</p>
-              <form className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input 
-                type="text" 
-                id="name" 
-                className="form-input" 
-                placeholder="Your name"
-                required
-                />
-              </div>
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                className="form-input" 
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message" className="form-label">Message</label>
-              <textarea 
-                id="message" 
-                className="form-textarea" 
-                placeholder="Your message here..."
-                rows={6}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="submit-btn">Send Message</button>
-          </form>
+              <form ref={contactFormRef} className="contact-form" onSubmit={handleContactSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name" className="form-label">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="from_name"
+                    className="form-input"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email" className="form-label">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="from_email"
+                    className="form-input"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="form-textarea"
+                    placeholder="Your message here..."
+                    rows={6}
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="submit-btn" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send Message'}
+                </button>
+
+                {sendResult ? (
+                  <p style={{ marginTop: 12, color: sendResult.startsWith('Failed') ? '#f87171' : '#86efac' }}>{sendResult}</p>
+                ) : null}
+              </form>
         </div>
       </section>
 
