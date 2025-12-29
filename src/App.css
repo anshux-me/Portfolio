@@ -247,6 +247,23 @@ body {
   color: var(--text-light);
 }
 
+/* Make dropdown navigation items fully readable on white background */
+.search-results {
+  background: #fff;
+}
+.search-results .result-title {
+  color: #111 !important;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+.search-results .result-description {
+  color: #444 !important;
+  opacity: 1 !important;
+}
+.search-results .result-icon {
+  color: #666 !important;
+}
+
 .search-footer {
   display: flex;
   justify-content: space-between;
@@ -378,6 +395,7 @@ body {
   transition: all 0.3s ease;
 }
 
+.skill-category h3,
 .skill-category h4 {
   font-size: 1rem;
   font-weight: 700;
@@ -701,10 +719,10 @@ body {
   height: 50px;
   border-radius: 50%;
   color: white;
-  background: #2F2C27;
+  background: #0C0B15;
   transition: all 0.3s ease;
   text-decoration: none;
-  border: 2px solid #2F2C27;
+  border: 2px solid #0C0B15;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
