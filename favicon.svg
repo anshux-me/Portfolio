@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#222028" />
+      <stop offset="100%" stop-color="#0b0b0f" />
+    </linearGradient>
+    <radialGradient id="rim" cx="35%" cy="25%" r="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="100%" height="100%" rx="64" ry="64" fill="url(#g)" />
+  <rect width="100%" height="100%" rx="64" ry="64" fill="url(#rim)" />
+
+  <!-- subtle diagonal grid dots for texture -->
+  <g fill="#2b2a2d" opacity="0.18">
+    <g transform="translate(22,22) scale(0.25)">
+      <rect x="4" y="4" width="2" height="2" rx="1" ry="1" />
+    </g>
+  </g>
+
+  <!-- main monogram A -->
+  <g transform="translate(64,56) scale(0.8)" filter="url(#soft)">
+    <path d="M192 32 L320 384 L256 384 L224 272 L160 272 L128 384 L64 384 Z" fill="#ffffff" opacity="0.92"/>
+    <rect x="156" y="160" width="100" height="22" rx="6" fill="#0b0b0f" opacity="0.9"/>
+  </g>
+
+  <!-- highlight stroke -->
+  <path d="M192 32 L320 384 L256 384 L224 272 L160 272 L128 384 L64 384 Z" fill="none" stroke="#ffffff11" stroke-width="6" transform="translate(64,56) scale(0.8)" />
+
+</svg>
