@@ -17,33 +17,6 @@ import {
   Cloud,
 } from 'lucide-react';
 
-// Brand icons for tech stacks
-import {
-  SiPython,
-  SiCplusplus,
-  SiJavascript,
-  SiTypescript,
-  SiJava,
-  SiReact,
-  SiNextdotjs,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiFlask,
-  SiFastapi,
-  SiMongodb,
-  SiFirebase,
-  SiMysql,
-  SiPytorch,
-  SiHuggingface,
-  SiGit,
-  SiDocker,
-  SiVercel,
-  SiAmazonaws,
-} from 'react-icons/si';
-
 interface NavLink {
   id: string;
   title: string;
@@ -373,13 +346,7 @@ const App: React.FC = () => {
                   <div className="skill-items">
                     {cat.items.map((it: any) => (
                       <span key={it.name} className="skill-item">
-                        {it.BrandIcon ? (
-                          // brand-specific icon (preferred)
-                          <it.BrandIcon className="skill-icon" />
-                        ) : it.Icon ? (
-                          // fallback to lucide icon
-                          <it.Icon className="skill-icon" />
-                        ) : null}
+                        {it.Icon ? <it.Icon className="skill-icon" /> : null}
                         <span className="skill-name">{it.name}</span>
                       </span>
                     ))}
