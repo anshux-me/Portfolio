@@ -1,7 +1,20 @@
 import React, { useRef, useEffect, useState } from 'react';
-
 import LightRays from './components/LightRays';
 import './App.css';
+
+// Icons from lucide-react (install with `npm i lucide-react` if missing)
+import {
+  Code,
+  Monitor,
+  Server,
+  Database,
+  Cpu,
+  GitBranch,
+  Box,
+  Layers,
+  Terminal,
+  Cloud,
+} from 'lucide-react';
 
 interface NavLink {
   id: string;
@@ -153,10 +166,11 @@ const App: React.FC = () => {
 
   return (
     <main className="container">
+      <LightRays raysColor="#ffffff" raysOrigin="top-center" raysSpeed={1} followMouse={true} className="page-lightrays" />
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">Anshu Kumar</h1>
+          <h1 className="hero-title">Anshu</h1>
 
           {/* Simple Hey Card */}
           <div className="search-container">
@@ -219,83 +233,91 @@ const App: React.FC = () => {
           {/* Technical Skills */}
           <div className="technical-skills">
             <h2 className="skills-subtitle">Technical Skills</h2>
-            
+
+            {/* Use a data-driven structure so each skill can include a lucide icon */}
             <div className="skills-grid">
-              <div className="skill-category">
-                <h3>Languages</h3>
-                <div className="skill-items">
-                  <span>Python,</span>
-                  <span>,C</span>
-                  <span>,JavaScript</span>
-                  <span>,TypeScript</span>
-                  <span>,Java</span>
-                  <span>,C++</span>
+              {(
+                [
+                  {
+                    title: 'Languages',
+                    items: [
+                      { name: 'Python', Icon: Code },
+                      { name: 'C++', Icon: Code },
+                      { name: 'JavaScript', Icon: Code },
+                      { name: 'TypeScript', Icon: Code },
+                      { name: 'Java', Icon: Code },
+                    ],
+                  },
+                  {
+                    title: 'Frontend',
+                    items: [
+                      { name: 'React.js', Icon: Monitor },
+                      { name: 'Next.js', Icon: Monitor },
+                      { name: 'HTML5/CSS3', Icon: Monitor },
+                      { name: 'Tailwind CSS', Icon: Monitor },
+                    ],
+                  },
+                  {
+                    title: 'Backend',
+                    items: [
+                      { name: 'Node.js', Icon: Server },
+                      { name: 'Express.js', Icon: Server },
+                      { name: 'Flask', Icon: Server },
+                      { name: 'FastAPI', Icon: Server },
+                    ],
+                  },
+                  {
+                    title: 'Databases',
+                    items: [
+                      { name: 'MongoDB', Icon: Database },
+                      { name: 'Firebase', Icon: Database },
+                      { name: 'MySQL', Icon: Database },
+                      { name: 'SQL', Icon: Database },
+                    ],
+                  },
+                  {
+                    title: 'AI/ML',
+                    items: [
+                      { name: 'HuggingFace Transformers', Icon: Cpu },
+                      { name: 'PyTorch', Icon: Cpu },
+                      { name: 'NLP', Icon: Cpu },
+                    ],
+                  },
+                  {
+                    title: 'Tools & Platforms',
+                    items: [
+                      { name: 'Git', Icon: GitBranch },
+                      { name: 'Docker', Icon: Box },
+                      { name: 'REST APIs', Icon: Terminal },
+                      { name: 'Vercel', Icon: Cloud },
+                      { name: 'AWS', Icon: Cloud },
+                    ],
+                  },
+                  {
+                    title: 'Soft Skills',
+                    items: [
+                      { name: 'Problem Solving' },
+                      { name: 'Technical Leadership' },
+                      { name: 'Team Collaboration' },
+                      { name: 'Project Management' },
+                      { name: 'Critical Thinking' },
+                      { name: 'Communication' },
+                    ],
+                  },
+                ]
+              ).map((cat) => (
+                <div key={cat.title} className="skill-category">
+                  <h3>{cat.title}</h3>
+                  <div className="skill-items">
+                    {cat.items.map((it: any) => (
+                      <span key={it.name} className="skill-item">
+                        {it.Icon ? <it.Icon className="skill-icon" /> : null}
+                        <span className="skill-name">{it.name}</span>
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>Frontend</h4>
-                <div className="skill-items">
-                  <span>React</span>
-                  <span>,Next.js</span>
-                  <span>,HTML/CSS3</span>
-                  <span>,Tailwind CSS</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>Backend</h4>
-                <div className="skill-items">
-                  <span>Node.js</span>
-                  
-                  <span>,Flask</span>
-                  <span>,FastAPI</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>Databases</h4>
-                <div className="skill-items">
-                  
-                  <span>Firebase</span>
-                  <span>,MySQL</span>
-                  <span>SQL</span>
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>AI/ML</h4>
-                <div className="skill-items">
-                  <span>Scikit-learn</span>
-                  <span>,PyTorch</span>
-                  <span>NLP</span>
-                  
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>Tools & Platforms</h4>
-                <div className="skill-items">
-                  <span>Git</span>
-                  <span>,Docker</span>
-                  <span>,REST APIs</span>
-                  
-                  <span>,Vercel</span>
-                
-                </div>
-              </div>
-
-              <div className="skill-category">
-                <h4>Soft Skills</h4>
-                <div className="skill-items">
-                  <span>Problem Solving</span>
-                  <span>,Technical Leadership</span>
-                  <span>,Team Collaboration</span>
-                  <span>,Project Management</span>
-                  <span>,Critical Thinking</span>
-                  <span>,Communication</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           
