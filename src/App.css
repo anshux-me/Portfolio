@@ -315,11 +315,12 @@ body {
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 8vw, 72px);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   letter-spacing: -1px;
   color: white;
+  text-align: left;
 }
 
 .section-subtitle {
@@ -397,7 +398,7 @@ body {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px; /* restored larger spacing between categories */
+  gap: 32px; /* compact spacing used in earlier stage */
 }
 
 .skill-category {
@@ -413,33 +414,33 @@ body {
   font-size: 1rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 20px; /* slightly larger gap below the category title */
+  margin-bottom: 16px; /* tighter gap below the category title */
 }
 
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px; /* increase spacing between chips */
+  gap: 12px; /* original compact spacing between chips */
 }
 
 .skill-item {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: transparent;
   color: #ccc;
-  padding: 8px 12px; /* larger click area and visual padding */
-  border-radius: 6px;
+  padding: 4px 10px; /* compact inline chips similar to screenshot */
+  font-size: 0.92rem;
 }
 
 .skill-icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: #fff;
 }
 
 .skill-name {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .skill-category:hover {
@@ -563,15 +564,7 @@ body {
 .contact-section {
   color: white;
 }
-/* .section-title */
-.section-content {
-  font-size: 1.05rem;
-  margin-left: 150px;
-  color: #ccc;
-  margin-bottom: 48px;
-  line-height: 1.8;
-  max-width: 700px;
-}
+/* contact section uses the shared `.section-content` rules above */
 
 .contact-form {
   max-width: 700px;
@@ -671,15 +664,15 @@ body {
 .hsection {
   border: 1px solid #555;
   border-radius: 10px;
-  padding: 16px;
+  padding: 12px;
   background: transparent;
 }
 
 .hsection-title {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .hsection-text {
@@ -690,13 +683,14 @@ body {
 .reading-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
+/* Book cover image in the reading row - default (desktop) */
 .reading-img {
-  width: 84px;
-  height: 84px;
-  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
   object-fit: cover;
   border: 1px solid #555;
 }
@@ -828,6 +822,13 @@ body {
   }
 }
 
+/* On larger screens nudge section content right to account for the left social gutter */
+@media (min-width: 1024px) {
+  .section-content {
+    padding-left: 80px;
+  }
+}
+
 /* Additional responsive rules to improve layout across tablets and phones */
 @media (max-width: 1024px) {
   .container {
@@ -901,8 +902,8 @@ body {
   }
 
   .reading-img {
-    width: 86px;
-    height: 86px;
+    width: 64px;
+    height: 64px;
   }
 
   /* Reduce project card padding so content fits better */
