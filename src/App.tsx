@@ -26,7 +26,6 @@ interface NavLink {
 
 const App: React.FC = () => {
   const [currentTime, setCurrentTime] = useState('00:00 GMT+5:30');
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const navLinks: NavLink[] = [
     {
@@ -121,10 +120,6 @@ const App: React.FC = () => {
         behavior: 'smooth'
       });
     }
-    if (searchInputRef.current) {
-      searchInputRef.current.blur();
-      searchInputRef.current.value = '';
-    }
   };
 
   const handleResultClick = (sectionId: string) => {
@@ -207,17 +202,11 @@ const App: React.FC = () => {
         <div className="hero-content">
           <h1 className="hero-title">Anshu</h1>
 
-          {/* Simple Hey Card */}
-          <div className="search-container">
-            <input
-              ref={searchInputRef}
-              type="text"
-              className="search-input"
-              placeholder="Hey"
-              autoComplete="off"
-            />
+          {/* Simple static navigation card */}
+          <div className="nav-card">
+            <div className="card-header">Hey</div>
 
-            {/* Search Results / Navigation Menu */}
+            {/* Navigation Menu (static items) */}
             <div className="search-results">
               {navLinks.map((link) => (
                 <div
