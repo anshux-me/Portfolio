@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
   const navLinks: NavLink[] = [
     {
-      id: 'about',
+      id: 'about-anchor',
       title: 'About',
       description: 'you can call me Anshu',
       icon: (
@@ -40,7 +40,7 @@ const App: React.FC = () => {
       )
     },
     {
-      id: 'work',
+      id: 'work-anchor',
       title: 'Work',
       description: 'experiments & projects',
       icon: (
@@ -51,7 +51,7 @@ const App: React.FC = () => {
       )
     },
     {
-      id: 'library',
+      id: 'library-anchor',
       title: 'Library',
       description: "Anshu's library",
       icon: (
@@ -62,7 +62,7 @@ const App: React.FC = () => {
       )
     },
     {
-      id: 'contact',
+      id: 'contact-anchor',
       title: 'Contact',
       description: "let's connect",
       icon: (
@@ -112,22 +112,21 @@ const App: React.FC = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 60;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const element = document.getElementById(sectionId);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+};
 
   const handleResultClick = (sectionId: string) => {
     scrollToSection(sectionId);
   };
 
   // Projects data and filtering
-  const projectFilters = ['All Projects', 'ML', 'SQL', 'Excel', 'Power BI', 'Others'] as const;
+  const projectFilters = ['All Projects', 'ML', 'Excel', 'Power BI', 'Others'] as const;
   type Filter = typeof projectFilters[number];
   const [activeFilter, setActiveFilter] = useState<Filter>('All Projects');
 
@@ -158,6 +157,20 @@ const App: React.FC = () => {
       description:
         'Developed Process Performance Analyzer, a cross-platform tool designed to monitor system processes, track performance load, and alert users when the system is overutilized or when unused processes occupy resources..',
       tags: ['Python', 'CSS3', 'Lucide React', 'Platform Module', 'Psutil'],
+      category: 'ML' as Filter,
+    },
+    {
+      title: 'Gesture Flow',
+      description:
+        'Developed a real-time hand-gesture controlled virtual mouse using OpenCV and MediaPipe, supporting cursor movement, click, scroll, and drag-and-drop operations with gesture stabilization and modular architecture.',
+      tags: ['Python', 'OpenCV', 'MediaPipe Hands', 'PyAutoGUI'],
+      category: 'ML' as Filter,
+    },
+    {
+      title: 'WasteWise',
+      description:
+        'It is an AI-powered waste segregation system that automatically classifies waste images into recyclable and non-recyclable categories using computer vision. The project focuses on building a robust binary classification pipeline through dataset restructuring, image preprocessing, and convolutional neural networks, enabling accurate and efficient waste identification to support sustainable recycling practices.',
+      tags: ['CNN', 'TensorFlow', 'Keras', 'Python'],
       category: 'ML' as Filter,
     },
   ];
@@ -239,9 +252,10 @@ const App: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section about-section">
+      <section id="about" className="section">
         <div className="section-content">
-          <h2 className="section-title">About Me</h2>
+        <div id="about-anchor" className="section-anchor"></div>
+        <h2 id="about-title" className="section-title">About Me</h2>
           
           <div className="about-text">
             <p>
@@ -341,7 +355,10 @@ const App: React.FC = () => {
       {/* Experiments Section */}
       <section id="work" className="section experiments-section">
         <div className="section-content">
-          <h2 className="section-title">Projects</h2>
+          <div id="work-anchor" className="section-anchor"></div>
+          <h2 id="work-title" className="section-title">Projects</h2>
+
+
           {/* Filter Bar */}
           <div className="filter-bar" role="tablist" aria-label="Project filters">
             {projectFilters.map((f) => (
@@ -377,7 +394,10 @@ const App: React.FC = () => {
       {/* Library Section */}
       <section id="library" className="section achievements-section">
         <div className="section-content">
-          <h2 className="section-title">Anshu's Library</h2>
+          <div id="library-anchor" className="section-anchor"></div>
+
+          <h2 id="library-title" className="section-title">Anshu's Library</h2>
+
           <div className="horizontal-sections">
             <div className="hsection">
               <h3 className="hsection-title">Currently expanding my knowledge in</h3>
@@ -403,7 +423,10 @@ const App: React.FC = () => {
             {/* Contact Section */}
             <section id="contact" className="section contact-section">
             <div className="section-content">
-              <h2 className="section-title">Contact</h2>
+              <div id="contact-anchor" className="section-anchor"></div>
+
+              <h2 id="contact-title" className="section-title">Contact</h2>
+
               <p className="contact-subtitle">Let's connect, Feel free to reach out.</p>
               <form ref={contactFormRef} className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-group">
