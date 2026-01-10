@@ -25,7 +25,7 @@ interface NavLink {
 }
 
 const App: React.FC = () => {
-  const [currentTime, setCurrentTime] = useState('00:00 GMT+5:30');
+  const [currentTime, setCurrentTime] = useState('00:00');
 
   const navLinks: NavLink[] = [
     {
@@ -85,31 +85,36 @@ const App: React.FC = () => {
       )
     }
   ];
+const [currentDay, setCurrentDay] = useState('Sunday');
 
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const formatter = new Intl.DateTimeFormat('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-        timeZone: 'Asia/Kolkata'
-      });
-      const time = formatter.format(now);
-      setCurrentTime(`${time} GMT+5:30`);
-    };
+useEffect(() => {
+  const updateTime = () => {
+    const now = new Date();
 
-    updateTime();
-    // initialize EmailJS with the public key so sendForm works without passing key every time
-    try {
-      emailjs.init('RxnQkd68McQZKFvcd');
-    } catch (e) {
-      // ignore if init is not available during tests or before install
-    }
-    const interval = setInterval(updateTime, 60000);
+    const timeFormatter = new Intl.DateTimeFormat('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Asia/Kolkata',
+    });
 
-    return () => clearInterval(interval);
-  }, []);
+    const dayFormatter = new Intl.DateTimeFormat('en-US', {
+      weekday: 'long',
+      timeZone: 'Asia/Kolkata',
+    });
+
+    const time = timeFormatter.format(now);
+    const day = dayFormatter.format(now);
+
+    setCurrentTime(time);
+    setCurrentDay(day);
+  };
+
+  updateTime();
+  const interval = setInterval(updateTime, 60000);
+  return () => clearInterval(interval);
+}, []);
+
 
   const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -217,7 +222,7 @@ const App: React.FC = () => {
 
           {/* Simple static navigation card */}
           <div className="nav-card">
-            <div className="card-header">Hey</div>
+            <div className="card-header">Thanks for stopping by!</div>
 
             {/* Navigation Menu (static items) */}
             <div className="search-results">
@@ -243,7 +248,7 @@ const App: React.FC = () => {
               ))}
 
               <div className="search-footer">
-                <span className="footer-text">Enjoy your Sunday!</span>
+                <span className="footer-text">Enjoy your {currentDay}!</span>
                 <span className="footer-time">{currentTime}</span>
               </div>
             </div>
@@ -283,7 +288,7 @@ const App: React.FC = () => {
                       { name: 'C++', Icon: Code },
                       { name: 'JavaScript', Icon: Code },
                       { name: 'TypeScript', Icon: Code },
-                      { name: 'Java', Icon: Code },
+                      { name: 'Java', Icon : Code },
                     ],
                   },
                   {
@@ -340,6 +345,7 @@ const App: React.FC = () => {
                     {cat.items.map((it: any) => (
                       <span key={it.name} className="skill-item">
                         {it.Icon ? <it.Icon className="skill-icon" /> : null}
+                        
                         <span className="skill-name">{it.name}</span>
                       </span>
                     ))}
@@ -392,7 +398,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Library Section */}
-      <section id="library" className="section achievements-section">
+      <section id="library" className="section">
         <div className="section-content">
           <div id="library-anchor" className="section-anchor"></div>
 
