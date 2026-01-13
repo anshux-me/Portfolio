@@ -3,19 +3,17 @@ import emailjs from '@emailjs/browser';
 import LightRays from './components/LightRays';
 import './App.css';
 
+
+import { icons } from './assets/icons';
+import LibraryGrid from './components/LibraryGrid';
 // Icons from lucide-react (install with `npm i lucide-react` if missing)
-import {
-  Code,
-  Monitor,
-  Server,
-  Database,
-  Cpu,
-  GitBranch,
-  Box,
-  Layers,
+import{
+  
   Terminal,
-  Cloud,
+
+  CodeXml,
 } from 'lucide-react';
+
 
 interface NavLink {
   id: string;
@@ -53,7 +51,7 @@ const App: React.FC = () => {
     {
       id: 'library-anchor',
       title: 'Library',
-      description: "Anshu's library",
+      description: "Books i've read",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -284,56 +282,56 @@ useEffect(() => {
                   {
                     title: 'Languages',
                     items: [
-                      { name: 'Python', Icon: Code },
-                      { name: 'C++', Icon: Code },
-                      { name: 'JavaScript', Icon: Code },
-                      { name: 'TypeScript', Icon: Code },
-                      { name: 'Java', Icon : Code },
+                      { name: 'Python', icon: icons.python },
+                      { name: 'C++', icon: icons.cpp },
+                      { name: 'JavaScript', icon: icons.javascript },
+                      { name: 'TypeScript', icon: icons.typescript },
+                      { name: 'Java', icon: icons.java },
                     ],
                   },
                   {
                     title: 'Frontend',
                     items: [
-                      { name: 'React.js', Icon: Monitor },
-                      { name: 'Next.js', Icon: Monitor },
-                      { name: 'HTML5/CSS3', Icon: Monitor },
-                      { name: 'Tailwind CSS', Icon: Monitor },
+                      { name: 'React.js', icon: icons.react },
+                      { name: 'Next.js', icon: icons.nextjs },
+                      { name: 'HTML5/CSS3', icon: icons.html5 },
+                      { name: 'Tailwind CSS', icon: icons.tailwind },
                     ],
                   },
                   {
                     title: 'Backend',
                     items: [
-                      { name: 'Node.js', Icon: Server },
-                      { name: 'Express.js', Icon: Server },
-                      { name: 'Flask', Icon: Server },
-                      { name: 'FastAPI', Icon: Server },
+                      { name: 'Node.js', icon: icons.nodejs },
+                      { name: 'Express.js', icon: icons.express },
+                      { name: 'Flask', icon: icons.flask },
+                      { name: 'FastAPI', icon: icons.fastapi },
                     ],
                   },
                   {
                     title: 'Databases',
                     items: [
-                      { name: 'MongoDB', Icon: Database },
-                      { name: 'Firebase', Icon: Database },
-                      { name: 'MySQL', Icon: Database },
-                      { name: 'SQL', Icon: Database },
+                      { name: 'MongoDB', icon: icons.mongodb },
+                      { name: 'Firebase', icon: icons.firebase },
+                      { name: 'MySQL', icon: icons.mysql },
+                      { name: 'SQL', icon: icons.sql },
                     ],
                   },
                   {
                     title: 'AI/ML',
                     items: [
-                      { name: 'HuggingFace Transformers', Icon: Cpu },
-                      { name: 'PyTorch', Icon: Cpu },
-                      { name: 'NLP', Icon: Cpu },
+                      { name: 'HuggingFace Transformers', icon: icons.huggingface },
+                      { name: 'PyTorch', icon: icons.pytorch },
+                      { name: 'NLP', icon: icons.nlp},
                     ],
                   },
                   {
                     title: 'Tools & Platforms',
                     items: [
-                      { name: 'Git', Icon: GitBranch },
-                      { name: 'Docker', Icon: Box },
-                      { name: 'REST APIs', Icon: Terminal },
-                      { name: 'Vercel', Icon: Cloud },
-                      { name: 'AWS', Icon: Cloud },
+                      { name: 'Git', icon: icons.git },
+                      { name: 'Docker', icon: icons.docker },
+                      { name: 'REST APIs', icon: icons.fastapi },
+                      { name: 'Vercel', icon: icons.vercel },
+                      { name: 'AWS', icon: icons.cloud },
                     ],
                   },
                   
@@ -344,8 +342,11 @@ useEffect(() => {
                   <div className="skill-items">
                     {cat.items.map((it: any) => (
                       <span key={it.name} className="skill-item">
-                        {it.Icon ? <it.Icon className="skill-icon" /> : null}
-                        
+                        {it.icon ? (
+                          <img src={it.icon} alt={it.name} className="skill-icon" />
+                        ) : it.Icon ? (
+                          <it.Icon className="skill-icon" />
+                        ) : null}
                         <span className="skill-name">{it.name}</span>
                       </span>
                     ))}
@@ -399,32 +400,13 @@ useEffect(() => {
 
       {/* Library Section */}
       <section id="library" className="section">
-        <div className="section-content">
-          <div id="library-anchor" className="section-anchor"></div>
+  <div className="section-content">
+    <div id="library-anchor" className="section-anchor"></div>
+    <h2 className="section-title">Anshu's Library</h2>
 
-          <h2 id="library-title" className="section-title">Anshu's Library</h2>
-
-          <div className="horizontal-sections">
-            <div className="hsection">
-              <h3 className="hsection-title">Currently expanding my knowledge in</h3>
-              <p className="hsection-text">SVM algorithm, Typescript and Data visualization with Power BI</p>
-            </div>
-            <div className="hsection">
-              <h3 className="hsection-title">Currently reading</h3>
-                <div className="reading-row">
-                <img
-                  src="https://books.google.co.in/books/publisher/content?id=OSchEAAAQBAJ&pg=PA1&img=1&zoom=3&hl=en&sig=ACfU3U0ENO2BcYBAILxzc9B-_8-H39Vh3w&w=1280"
-                  alt="Book cover for Can't Hurt Me: Master Your Mind and Defy the Odds by David Goggins"
-                  className="reading-img"
-                />
-                <p className="reading-text">Can't Hurt Me: Master Your Mind and Defy the Odds</p>
-                {/* <h4>Book by David Goggins</h4> */}
-
-                </div>
-              </div>
-              </div>
-            </div>
-            </section>
+    <LibraryGrid />
+  </div>
+      </section>
 
             {/* Contact Section */}
             <section id="contact" className="section contact-section">
@@ -433,7 +415,9 @@ useEffect(() => {
 
               <h2 id="contact-title" className="section-title">Contact</h2>
 
-              <p className="contact-subtitle">Let's connect, Feel free to reach out.</p>
+              <p className="contact-subtitle">Let's connect -- Feel free to reach out.</p>
+
+
               <form ref={contactFormRef} className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Name</label>
@@ -493,9 +477,10 @@ useEffect(() => {
             </svg>
           </a>
           <a href="https://leetcode.com/u/Anshukr384/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="social-icon" title="LeetCode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16.102 17.93h2.747v-5.92h5.486v-2.202h-5.486v-5.91h-2.747v5.91h-5.488v2.202h5.488zm-6.14 0h2.747v-4.464h4.753v-2.202h-4.753v-4.464h-2.747zm-6.041 0h2.747v-11.52h-2.747z"/>
-            </svg>
+            <CodeXml size={20} />
+            
+          
+
           </a>
           <a href="https://www.linkedin.com/in/anshu-kumar-042346291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon" title="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

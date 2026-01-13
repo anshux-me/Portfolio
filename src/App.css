@@ -415,9 +415,9 @@ body {
   padding-top: 60px;
 }
 .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: DM sans, sans-serif;
   font-size: clamp(2.8rem, 6vw, 5.2rem);
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 18px;
   letter-spacing: -1px;
   color: white;
@@ -524,6 +524,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px; /* original compact spacing between chips */
+  color: rgba(255,255,255,0.85);
 }
 
 .skill-item {
@@ -531,14 +532,22 @@ body {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #ccc;
+  color: white;
+  /* border: 1px solid #555; */
+  /* border-radius: 20px; */
+  /* transition: all 0.2s ease; */
+  /* cursor: default; */
   padding: 4px 10px; /* compact inline chips similar to screenshot */
   font-size: 0.92rem;
 }
 
 .skill-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-block;
+  object-fit: contain;
+  filter: invert(1) brightness(1.15);
   color: #fff;
 }
 
@@ -676,6 +685,13 @@ body {
   display: block;
 }
 /* contact section uses the shared `.section-content` rules above */
+.contact-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
 
 .contact-form {
   max-width: 700px;
@@ -696,30 +712,69 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.form-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+  margin-bottom: 0.4rem;
+}
 
 .form-input,
 .form-textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 16px;
+  border-radius: 10px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.05);
+  outline: none;
+}
+.form-textarea,
+.form-input {
   padding: 14px 16px;
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 6px;
   color: white;
   font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
   outline: none;
 }
+/* .form-textarea {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  outline: none; 
+  } */
 
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.form-input:focus,
+/* .form-input:focus,
 .form-textarea:focus {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+} */
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.05);
+  outline: none;
 }
 
 .form-textarea {
@@ -728,21 +783,24 @@ body {
 }
 
 .submit-btn {
-  padding: 14px 32px;
-  background: black;
-  color: white;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  
+
+  background: #02bcf5; 
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
+  /* font-size: 1rem; */
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.04em;
 }
 
 .submit-btn:hover {
-  background: #4338ca;
+  background: #0a6357;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
 }
@@ -771,6 +829,17 @@ body {
   gap: 24px;
   margin-top: 24px;
 }
+
+/* #library-title {
+  margin-left: 80px;
+} */
+
+.library-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 
 .hsection {
   border: 1px solid #555;
@@ -846,6 +915,8 @@ body {
   align-items: center;
 }
 
+
+
 .social-icons-container {
   display: flex;
   flex-direction: row;
@@ -863,7 +934,7 @@ body {
   background-clip: padding-box;
 }
 
-.social-icon {
+/* .social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -877,6 +948,38 @@ body {
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
+
+.social-icon svg {
+  stroke: currentColor;
+  fill: none;
+} */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: white;
+  background: transparent;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.social-icon svg {
+  color: white;
+}
+
+.social-icon svg path {
+  fill: currentColor;
+}
+
+.social-icon svg[stroke] {
+  stroke: currentColor;
+  fill: none;
+}
+
 
 .social-icon:hover {
   background: rgba(255,255,255,0.04);
@@ -920,6 +1023,11 @@ body {
 
   .social-navbar {
     left: 20px;
+    position:static;
+    transform: none;
+    margin: 32px auto 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
