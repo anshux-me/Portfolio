@@ -1,3 +1,6 @@
+import IntroOverlay from "./components/intro";
+
+
 import React, { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import LightRays from './components/LightRays';
@@ -5,16 +8,29 @@ import './App.css';
 
 
 import { icons } from './assets/icons';
-import LibraryGrid from './components/LibraryGrid';
+import LibraryGrid from './components/Library';
 // Icons from lucide-react (install with `npm i lucide-react` if missing)
+
+
+
+
 import{
   
   Terminal,
-
+  
   CodeXml,
 } from 'lucide-react';
 
 
+// return (
+//   <>
+//     <IntroOverlay/>
+//     <main className="container">
+//       {/* rest of your portfolio */}
+//       </main>
+//   </>
+// );
+    
 interface NavLink {
   id: string;
   title: string;
@@ -465,7 +481,7 @@ useEffect(() => {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Anshu Kumar. Stay hydrated y'all 💧</p>
+        <p>&copy; Made by Anshu</p>
       </footer>
 
       {/* Vertical Social Icons Navigation Bar - Left Side */}
@@ -498,4 +514,6 @@ useEffect(() => {
   );
 };
 
+
 export default App;
+

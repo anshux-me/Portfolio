@@ -1,0 +1,46 @@
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-text {
+  color: #ffffff;
+  font-family: "Inter", "SF Pro Display", system-ui, sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+
+  animation: sinkFade 3.2s ease-in-out forwards;
+}
+
+@keyframes sinkFade {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  60% {
+    opacity: 0.9;
+    transform: translateY(60px);
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(140px);
+    filter: blur(6px);
+  }
+}
