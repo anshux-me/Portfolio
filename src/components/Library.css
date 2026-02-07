@@ -4,25 +4,32 @@
 
 .library-section {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 0 40px;
-  color: white; /* Ensure all text inside is white */
+  color: white;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+  /* Contain absolute children */
 }
 
 .library-title {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   margin-bottom: 12px;
-  
-  
+
+
 }
 
 .library-subtitle {
+  text-decoration: underline;
   opacity: 0.65;
   margin-bottom: 6px;
   color: white;
 }
 
 .library-total {
+  text-decoration: underline;
   margin-bottom: 40px;
   opacity: 0.6;
   color: white;
@@ -37,11 +44,15 @@
   margin-bottom: 32px;
   background: rgba(40, 60, 80, 0.18);
   border-radius: 18px;
-  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.18);
-  padding: 18px 22px 18px 22px;
-  border: 1.5px solid rgba(255,255,255,0.08);
-  color: white; /* Ensure text inside block is white */
-  max-width: 100%; /* Ensure full width */
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.18);
+  padding: 18px 16px;
+  /* Reduced horizontal padding */
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .library-block-title {
@@ -55,14 +66,32 @@
 /* ================================
    Horizontal Scroll Row
 ================================ */
+.library-wrapper {
+  width: 100%;
+  padding-inline: 16px;
+  box-sizing: border-box;
+}
+
+.read-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
 
 .library-row {
   display: flex;
-  gap: 32px; /* Increased gap between book cards */
+  gap: 16px;
+  /* Increased spacing between books */
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 8px;
   scroll-snap-type: x mandatory;
-  /* Remove extra margin for a tighter row */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .library-row::-webkit-scrollbar {
@@ -79,14 +108,16 @@
 ================================ */
 
 .book-card {
-  flex: 0 0 140px; /* Increased width */
-  height: 220px;    /* Increased height */
+  flex: 0 0 clamp(120px, 35vw, 140px);
+  /* Responsive width */
+  height: clamp(180px, 50vw, 220px);
+  /* Responsive height */
   border-radius: 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
   scroll-snap-align: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,14 +144,17 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%; /* Full width */
-  max-width: 100%; /* Match section width */
-  margin: 32px 0 0 0; /* Remove auto centering, align with sections */
+  width: 100%;
+  /* Full width */
+  max-width: 100%;
+  /* Match section width */
+  margin: 32px 0 0 0;
+  /* Remove auto centering, align with sections */
   background: rgba(40, 60, 80, 0.18);
   border-radius: 14px;
   padding: 10px 22px;
-  border: 1.5px solid rgba(255,255,255,0.08);
-  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.10);
   color: white;
 }
 
@@ -154,12 +188,111 @@
 }
 
 /* ================================
+   Scroll Wrapper & Arrow Controls
+================================ */
+
+.scroll-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 50px;
+  /* Add padding for arrow buttons */
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 30, 40, 0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scroll-arrow:hover {
+  background: rgba(30, 45, 60, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.scroll-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-arrow-left {
+  left: 0;
+  /* Position outside book area */
+}
+
+.scroll-arrow-right {
+  right: 0;
+  /* Position outside book area */
+}
+
+/* Hide scrollbar on desktop for cleaner look */
+.library-row {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.library-row::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+/* ================================
    Responsive Tweaks
 ================================ */
 
 @media (max-width: 768px) {
+
+  /* Hide arrow buttons on mobile, use touch scroll */
+  .scroll-arrow {
+    display: none;
+  }
+
+  .library-section {
+    padding: 10px 0 40px;
+    /* Remove horizontal padding to prevent overflow */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .library-block {
+    padding: 14px 12px;
+    /* Minimal horizontal padding */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .library-row {
+    gap: 12px;
+    padding-right: 12px;
+    /* Small padding for scroll affordance */
+  }
+
   .book-card {
-    flex: 0 0 120px;
-    height: 180px;
+    flex: 0 0 clamp(110px, 40vw, 130px);
+    height: clamp(165px, 60vw, 200px);
+  }
+
+  .library-recommend {
+    padding: 8px 12px;
+    /* Match block padding */
   }
 }

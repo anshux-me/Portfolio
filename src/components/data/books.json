@@ -3,189 +3,141 @@
   "books": [
     {
     "id": "cant-hurt-me",
-    "title": "Can't Hurt Me",
-    "author": "David Goggins",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1536184191i/41721428.jpg",
-    "status": "reading",
-    "rating": 1
+    "status": "reading"
     },
     {
     "id": "yellowface",
-    "title": "Yellowface",
-    "author": "R.F. Kuang",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1671336608i/62047984.jpg",
-    "status": "read",
-    "rating": 3.5
+    "status": "read"
+ 
     },
     {
     "id": "After Dark",
-    "title": "After Dark",
-    "author": "Haruki Murakami",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1437952316i/17803.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
     },
     {
     "id": "Norwegian Wood",
-    "title": "Norwegian Wood",
-    "author": "Haruki Murakami",
     "cover": "https://cdn.penguin.co.in/wp-content/uploads/2023/06/9780099448822-3.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
+    
     },
     {
     "id": "Palace of Illusions",
-    "title": "Palace of Illusions",
-    "author": "Arundhati Roy",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1679444666i/1774836.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
     },
     {
     "id": "Before the coffee gets cold",
-    "title": "Before the coffee gets cold",
-    "author": "Toshikazu Kawaguchi",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704153539i/44421460.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
     },
     {
     "id": "Looking for Alaska",
-    "title": "Looking for Alaska",
-    "author": "John Green",
     "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmu4Y79qB5ZNdDPFFD154H-SXmvl79KPEkyXcAKNxBgoRmLhIUvQk1opkcPNTTAIkoPnx42mdHTDM31SOyQ0gm6t1-mBXzASj3FCDkvstG&s=10",
-    "status": "read",
-    "rating": 3
+    "status": "read"
     },
     {
     "id": "Almanakh of Naval Ravikant",
-    "title": "Almanakh of Naval Ravikant",
-    "author": "Erik Jorgenson",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1598011736i/54898389.jpg",
-    "status": "read",
-    "rating": 4
+    "status": "read"
     },
     {
     "id": "How to win friends and influence people",
-    "title": "How to win friends and influence people",
-    "author": "Dale Carnegie",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1442726934i/4865.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
+    
     },
     {
     "id": "King of wrath",
-    "title": "King of Wrath",
-    "author": "Anna Yuang",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1742667348i/217206738.jpg",
-    "status": "read",
-    "rating": 3
+    "status": "read"
     },
     {
     "id": "The Love Hypothesis",
-    "title": "The Love Hypothesis",
-    "author": "Ali Hazelwood",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1747519081i/56732449.jpg",
-    "status": "read",
-    "rating": 4
+    "status": "read"
+    
     },
     {
     "id": "The monk who sold his ferrari",
-    "title": "The monk who sold his ferrari",
-    "author": "Robin Sharma",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388189325i/43877.jpg",
-    "status": "read",
-    "rating": 4
+    "status": "read"
+    
     },
 
     {
     "id": "The subtle art of not giving a f*ck",
-    "title": "The subtle art of not giving a f*ck",
-    "author": "Mark Manson",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1465761302i/28257707.jpg",
-    "status": "read",
-    "rating": 4
+    "status": "read"
     },
     {
     "id": "ikigai",
-    "title": "Ikigai",
-    "author": "Héctor García",
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680629184i/124950497.jpg",
-    "status": "read",
-    "rating": 2
+    "status": "read"
     },
     {
     "id": "The Hidden Hindu",
-    "title": "The Hidden Hindu",
-    "author": "Akshat gupta",
+    
+    
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1667241135i/55751155.jpg",
-    "status": "read",
-    "rating": 3
+    "status": "read"
+    
     },
     {
     "id": "After the quake",
-    "title": "After the quake",
-    "author": "Haruki Murakami",
+    
     "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqknl8EMmO1bo0ne1pe5WqaFVSbMuhOLYU4dWy1Mhm2Av4zaNl1duxmGVC-nHYrbPublC9l0qImmWsjJswksGiPLhQK4pmKhAGvu8Cxn_r&s=10",
-    "status": "read",
-    "rating": 4
+    "status": "read"
+
     },
     {
     "id": "Song of archilles",
-    "title": "Song of archilles",
-    "author": "Madeline Miller",
+    
     "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4PJ4z21yIxX6r8IUxfhaDz0Pip0qP4QykUMfnD4OXQtda0g9Aw9IE6GtFzBkXz8Z95tmaBYFiXX4CYFmaKPdm__polvWmP3p7xYeXsFtLQ&s=10",
-    "status": "paused",
-    "rating": 3
+    "status": "paused"
     },
     
     {
     "id": "The Mountain is You",
-    "title": "The Mountain is You",
-    "author": "Brianna Wiest",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1590806892i/53642699.jpg",
-    "status": "read",
-    "rating": 3
+    "status": "read"
     },
     {
     "id": "3 mistakes of my life",
-    "title": "3 mistakes of my life",
-    "author": "Chetan Bhagat",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1216107646i/3320520.jpg",
-    "status": "read",
-    "rating": 3
+    "status": "read"
     },
     {
     "id": "Psycology of money",
-    "title": "Psycology of money",
-    "author": "Morgan Housel",
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1581527774i/41881472.jpg",
-    "status": "read",
-    "rating": 3
+    "status": "read"
     },
     {
     "id": "The Thousand splendid Suns",
-    "title": "The Thousand splendid Suns",
-    "author": "Khaled Hosseini",
+
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655336738i/128029.jpg",
-    "status": "read",
-    "rating": 5
+    "status": "read"
     },
     {
     "id": "Alchemist",
-    "title": "Alchemist",
-    "author": "Paulo Coelho",
+
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
-    "status": "read",
-    "rating": 4
+    "status": "read"
     },
     {
     "id": "2 states",
-    "title": "2 States",
-    "author": "Chetan Bhagat",
+
+
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1255292027i/6969361.jpg",
-    "status": "read",
-    "rating": 3.5
+    "status": "read"
     }
     
    

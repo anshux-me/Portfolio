@@ -30,6 +30,20 @@
   the relevant area to change colors, spacing, or typography.
 */
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section,
+.section-content,
+.library-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 :root {
   --bg: #000000;
   --text-primary: #ffffff;
@@ -124,15 +138,17 @@ body {
   border-radius: 10px;
   padding: 6px;
   /* apply frosted glass like the social container */
-  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #ffffff; /* ensure text inside nav card is white */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.02);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  /* ensure text inside nav card is white */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.02);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px) saturate(1.05);
   background-clip: padding-box;
   overflow: hidden;
 }
+
 /* .card-header {
   width: 100%;
   padding: 11px 14px;
@@ -162,9 +178,10 @@ body {
   font-size: 0.9rem;
 }
 
-.search-input:focus, .card-header:focus {
+.search-input:focus,
+.card-header:focus {
   border-bottom-color: var(--accent);
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   box-shadow: none;
 }
 
@@ -172,11 +189,13 @@ body {
 .nav-card .search-results .result-title {
   color: #ffffff !important;
 }
+
 .nav-card .search-results .result-description {
-  color: rgba(255,255,255,0.75) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
+
 .nav-card .search-results .result-icon {
-  color: rgba(255,255,255,0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .search-input-static {
@@ -193,6 +212,7 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
 .hero-nav button {
   background: transparent;
   border: none;
@@ -202,8 +222,9 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
+
 .hero-nav button:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Search Results Dropdown */
@@ -259,7 +280,8 @@ body {
 .result-content {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* put title left and description to the right */
+  justify-content: space-between;
+  /* put title left and description to the right */
   gap: 8px;
   width: 100%;
   min-width: 0;
@@ -279,27 +301,32 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: right; /* align description to the right side of the row */
+  text-align: right;
+  /* align description to the right side of the row */
 }
 
 /* Make dropdown navigation items fully readable on white background */
 .search-results {
   background: rgba(255, 255, 255, 0.1);
 }
+
 .search-results {
   /* allow more results to be visible before scrolling */
   max-height: 520px;
   overflow-y: auto;
 }
+
 .search-results .result-title {
   color: #111 !important;
   font-weight: 700;
   opacity: 1 !important;
 }
+
 .search-results .result-description {
   color: #444 !important;
   opacity: 1 !important;
 }
+
 .search-results .result-icon {
   color: #666 !important;
 }
@@ -343,7 +370,8 @@ body {
 .section-anchor {
   position: relative;
   height: 0;
-  scroll-margin-top: 0; /* title touches the top */
+  scroll-margin-top: 0;
+  /* title touches the top */
 }
 
 .section-anchor::after {
@@ -352,7 +380,8 @@ body {
   height: 1px;
   background: rgba(255, 255, 255, 0.12);
   width: 100%;
-  margin-bottom: 32px; /* space before title */
+  margin-bottom: 32px;
+  /* space before title */
 }
 
 
@@ -376,19 +405,22 @@ body {
     text-align: left !important;
   }
 }
+
 @media (min-width: 1440px) {
   .section-content {
     max-width: 1100px;
   }
+
   .section {
     min-height: 100vh;
-  } 
+  }
 }
 
 @media (min-width: 1920px) {
   .section-content {
     max-width: 1200px;
   }
+
   .section {
     min-height: 110vh;
   }
@@ -401,9 +433,11 @@ body {
   line-height: 1.1;
 }
 
+/* 
 .section:not(:last-of-type):not(.contact-section) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
+} */
+
 .section-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -411,9 +445,11 @@ body {
   z-index: 3;
   flex: 1;
 }
+
 #about {
   padding-top: 60px;
 }
+
 .section-title {
   font-family: DM sans, sans-serif;
   font-size: clamp(2.8rem, 6vw, 5.2rem);
@@ -421,7 +457,7 @@ body {
   margin-bottom: 18px;
   letter-spacing: -1px;
   color: white;
-  text-align: left !important;
+  text-align: left;
   width: 100%;
 }
 
@@ -483,12 +519,13 @@ body {
 
 /* ==================== Technical Skills ==================== */
 /* Use: styles for the technical skills section. The `.skills-grid`
-   provides a 2-column layout and `.skill-items` lists the simple
-   text-only skills. */
-.technical-skills {
+   provides a responsive 2-column layout (1-column on mobile) and 
+   each category is wrapped in a soft card. */
+.technical-skills .hsection {
   margin-top: 64px;
   padding-top: 48px;
   border-top: 1px solid #555;
+  background: linear-gradient(135deg, rgba(126, 125, 125, 0.12), rgba(60, 60, 60, 0.18) 80%, rgba(255, 255, 255, 0.04));
 }
 
 .skills-subtitle {
@@ -501,67 +538,79 @@ body {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px; /* compact spacing used in earlier stage */
+  gap: 24px;
 }
 
+/* Responsive: single column on mobile */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Soft skill card for each category */
 .skill-category {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
   transition: all 0.3s ease;
 }
 
+.skill-category:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Visually downgraded category titles */
 .skill-category h3,
 .skill-category h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 16px; /* tighter gap below the category title */
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* original compact spacing between chips */
-  color: rgba(255,255,255,0.85);
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
+/* Consistent skill item anatomy: icon + text */
 .skill-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
   color: white;
-  /* border: 1px solid #555; */
-  /* border-radius: 20px; */
-  /* transition: all 0.2s ease; */
-  /* cursor: default; */
-  padding: 4px 10px; /* compact inline chips similar to screenshot */
+  padding: 4px 10px;
   font-size: 0.92rem;
 }
 
+/* Fixed-width icon container for consistency */
 .skill-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img.skill-icon {
   width: 18px;
   height: 18px;
-  flex-shrink: 0;
-  display: inline-block;
   object-fit: contain;
-  filter: invert(1) brightness(1.15);
-  color: #fff;
+  filter: brightness(0) invert(1);
 }
 
-
-.skill-item:hover .skill-icon {
-  opacity: 1;
-}
- 
 .skill-name {
   font-size: 0.95rem;
-}
-
-.skill-category:hover {
-  border-color: transparent;
+  line-height: 1;
 }
 
 /* ==================== Projects Grid ==================== */
@@ -587,7 +636,7 @@ body {
 .filter-chip.active {
   color: white;
   border-color: #777;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .filter-chip {
@@ -683,7 +732,16 @@ body {
   min-height: auto !important;
   padding-bottom: 40px;
   display: block;
+
 }
+
+.contact-section .section-title,
+.contact-section .contact-subtitle {
+  /* text-align: center; */
+  padding-left: 110px;
+}
+
+
 /* contact section uses the shared `.section-content` rules above */
 .contact-subtitle {
   font-size: 0.95rem;
@@ -695,7 +753,8 @@ body {
 
 .contact-form {
   max-width: 700px;
-  margin: 0;
+  margin: 0 auto;
+  /* Center the form */
 }
 
 .form-group {
@@ -712,6 +771,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 .form-label {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -721,8 +781,8 @@ body {
 
 .form-input,
 .form-textarea {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 14px 16px;
   border-radius: 10px;
   transition: border 0.2s ease, box-shadow 0.2s ease;
@@ -730,10 +790,11 @@ body {
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: rgba(255,255,255,0.3);
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
   outline: none;
 }
+
 .form-textarea,
 .form-input {
   padding: 14px 16px;
@@ -746,6 +807,7 @@ body {
   transition: all 0.3s ease;
   outline: none;
 }
+
 /* .form-textarea {
   padding: 14px 16px;
   font-size: 0.95rem;
@@ -772,8 +834,8 @@ body {
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: rgba(255,255,255,0.3);
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
   outline: none;
 }
 
@@ -786,9 +848,9 @@ body {
   width: 100%;
   padding: 14px 16px;
   border-radius: 10px;
-  
 
-  background: #02bcf5; 
+
+  background: #02bcf5;
   color: #fff;
   border: none;
   /* font-size: 1rem; */
@@ -809,6 +871,46 @@ body {
   transform: translateY(0);
 }
 
+/* Contact Section Responsive */
+@media (max-width: 1024px) {
+
+  .contact-section .section-title,
+  .contact-section .contact-subtitle {
+    padding-left: 0px;
+    /* Reduce padding on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+
+  .contact-section .section-title,
+  .contact-section .contact-subtitle {
+    padding-left: 0 !important;
+    /* Override desktop padding */
+    text-align: left !important;
+    /* Left align on mobile to match form */
+    margin-left: 0;
+  }
+
+  .contact-form {
+    padding: 0;
+    /* Remove extra padding */
+  }
+}
+
+@media (max-width: 480px) {
+
+  .contact-section .section-title,
+  .contact-section .contact-subtitle {
+    padding-left: 0 !important;
+    text-align: left !important;
+  }
+
+  .contact-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
 /* ==================== Footer ==================== */
 /* Use: bottom of page footer styles (copyrights, summary).
    Keeps z-index high so it sits above LightRays when necessary. */
@@ -819,6 +921,7 @@ body {
   position: relative;
   z-index: 3;
 }
+
 /* ==================== Library Horizontal Sections ==================== */
 /* Use: stacked library/reading cards such as "Currently reading"
    and "Currently expanding my knowledge in". `.hsection` is the
@@ -828,6 +931,18 @@ body {
   grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .horizontal-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .horizontal-sections {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* #library-title {
@@ -847,6 +962,7 @@ body {
   padding: 16px;
   background: transparent;
 }
+
 @media (max-width: 768px) {
   .hsection {
     padding: 14px;
@@ -863,6 +979,7 @@ body {
     height: 56px;
   }
 }
+
 .hsection-title {
   color: white;
   font-size: 1.1rem;
@@ -920,15 +1037,16 @@ body {
 .social-icons-container {
   display: flex;
   flex-direction: row;
-  gap: 18px; /* increased horizontal spacing between icons */
+  gap: 18px;
+  /* increased horizontal spacing between icons */
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
   border-radius: 14px;
   /* stronger glassmorphism effect */
-  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px) saturate(1.05);
   background-clip: padding-box;
@@ -964,9 +1082,10 @@ body {
   background: transparent;
   transition: all 0.25s ease;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .social-icon svg {
   color: white;
 }
@@ -982,9 +1101,9 @@ body {
 
 
 .social-icon:hover {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   color: white;
-  border-color: rgba(255,255,255,0.12);
+  border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
 }
@@ -995,6 +1114,88 @@ body {
   stroke: none;
 }
 
+/* ==================== Scrolled State (Desktop) ==================== */
+/* When user scrolls down, move navbar to middle-left with vertical layout */
+.social-navbar.scrolled {
+  left: 24px;
+  bottom: 50%;
+  transform: translateY(50%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-navbar.scrolled .social-icons-container {
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 10px;
+}
+
+.social-navbar.scrolled .social-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.social-navbar.scrolled .social-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Smooth transitions for position changes */
+.social-navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icons-container {
+  transition: all 0.3s ease;
+}
+
+.social-icon {
+  transition: all 0.25s ease;
+}
+
+/* ==================== Mobile Behavior ==================== */
+/* Ensure navbar is always visible and centered on mobile landing page */
+@media (max-width: 768px) {
+  .social-navbar {
+    position: fixed !important;
+    left: 50% !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
+    z-index: 10000;
+  }
+
+  /* Hide when scrolled */
+  .social-navbar.scrolled {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Keep horizontal layout on mobile */
+  .social-icons-container {
+    flex-direction: row !important;
+    gap: 14px;
+    padding: 8px 14px;
+  }
+
+  /* Adjust icon sizes for mobile */
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+social-navbar {
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+}
+
 /* ==================== Responsive Design ==================== */
 @media (max-width: 768px) {
   .section {
@@ -1002,7 +1203,12 @@ body {
   }
 
   .hero {
-    min-height: 60vh;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 60px 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-title {
@@ -1023,7 +1229,7 @@ body {
 
   .social-navbar {
     left: 20px;
-    position:static;
+    position: static;
     transform: none;
     margin: 32px auto 0;
     display: flex;
@@ -1031,9 +1237,34 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .hero {
+    min-height: 110vh;
+    padding-top: calc(100px + 15vh);
+  }
+
+  .social-navbar {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    padding: 4px 0;
+  }
+
+  .social-icons-container {
+    gap: 10px;
+    padding: 6px 8px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 3px;
+    padding: 40px 16px;
   }
 
   .section {
@@ -1048,9 +1279,7 @@ body {
     max-height: 400px;
   }
 
-  .social-navbar {
-    display: none;
-  }
+  /* Social navbar is now visible on mobile - removed display: none */
 
   .contact-form {
     padding: 0;
@@ -1152,7 +1381,9 @@ body {
 
   /* Hide social navbar on smaller phones if still visible */
   @media (max-width: 480px) {
-    .social-navbar { display: none; }
+    .social-navbar {
+      display: none;
+    }
   }
 }
 
