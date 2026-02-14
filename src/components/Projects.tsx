@@ -92,7 +92,6 @@ const Projects = () => {
                                 className="project-arrow"
                                 width="20"
                                 height="20"
-                                margin="1rem"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
