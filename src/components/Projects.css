@@ -1,0 +1,280 @@
+/* ================================
+   Projects Section Base
+================================ */
+
+.projects-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* ================================
+   Filter Bar
+================================ */
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.filter-chip {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-chip.active {
+    background: white;
+    color: #111;
+    border-color: white;
+}
+
+/* ================================
+   Projects Grid
+================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    background: rgba(40, 60, 80, 0.18);
+    border: 1.5px solid rgba(230, 217, 217, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.project-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px);
+    /* Glassmorphism effect on hover */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ================================
+   Project Image
+================================ */
+
+.project-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* ================================
+   Project Content
+================================ */
+
+.project-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Meta Row: Category ---- Year */
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 0.4rem; */
+    margin: 1rem;
+    font-size: 1.00rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 450;
+}
+
+.project-category {
+    color: rgba(144, 238, 144, 0.8);
+}
+
+.project-year {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.project-title {
+    font-size: 1.3rem;
+    /* font-family: "SF Pro Display", Inter, system-ui, sans-serif; */
+    /* font-family: Poppins, Inter, sans-serif; */
+
+
+    font-weight: 600;
+    /* margin-top: 0; */
+    /* margin-bottom: 0.6rem; */
+    margin: 0;
+    color: white;
+    line-height: 1.3;
+}
+
+.project-description {
+    font-size: 0.95rem;
+
+
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.project-tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.project-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================================
+   Divider
+================================ */
+
+.project-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0;
+}
+
+/* ================================
+   View Project Section
+================================ */
+
+.project-view-section {
+    /* margin-left: 1rem; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 20px;
+    padding-left: 2.4rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0 0 16.5px 16.5px;
+}
+
+.project-view-section:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project-view-section span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-arrow {
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.project-view-section:hover .project-arrow {
+    transform: translateX(6px);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* ================================
+   Responsive Design
+================================ */
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 10px 0 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .filter-bar {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .filter-chip {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-chip {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .project-card {
+        padding: 14px;
+    }
+}

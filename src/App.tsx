@@ -9,6 +9,7 @@ import './App.css';
 
 import { icons } from './assets/icons';
 import LibraryGrid from './components/Library';
+import Projects from './components/Projects';
 // Icons from lucide-react (install with `npm i lucide-react` if missing)
 
 import {
@@ -153,59 +154,7 @@ const App: React.FC = () => {
     scrollToSection(sectionId);
   };
 
-  // Projects data and filtering
-  const projectFilters = ['All Projects', 'ML', 'Data & Analytics', 'Web Development', 'Others'] as const;
-  type Filter = typeof projectFilters[number];
-  const [activeFilter, setActiveFilter] = useState<Filter>('All Projects');
-
-  const projects = [
-    {
-      title: 'Fluento',
-      description:
-        'Fluento is an AI-powered language pronunciation trainer that helps users improve spoken accuracy by providing text-to-speech examples, analyzing user speech, scoring pronunciation quality, and tracking progress with real-time feedback',
-      tags: ['Python', 'FastAPI', 'PyAudio', 'Database', 'HTML', 'CSS'],
-      category: 'ML' as Filter,
-    },
-    {
-      title: "Revive",
-      description:
-        'Revive is a clean and intuitive fitness-tracking application that allows users to manage daily tasks, follow guided workouts, and monitor health metrics such as BMI—helping users stay organized and consistent in their fitness journey.',
-      tags: ['HTML', 'JavaScript', 'Tailwind CSS'],
-      category: 'Others' as Filter,
-    },
-    {
-      title: 'Decibel Detect',
-      description:
-        'Bike rental management: browsing, reservations, payments, admin dashboard, role-based access, damage reporting, dark/light themes.',
-      tags: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS'],
-      category: 'Web Development' as Filter,
-    },
-    {
-      title: 'Process Performance analyzer',
-      description:
-        'Developed Process Performance Analyzer, a cross-platform tool designed to monitor system processes, track performance load, and alert users when the system is overutilized or when unused processes occupy resources..',
-      tags: ['Python', 'CSS3', 'Lucide React', 'Platform Module', 'Psutil'],
-      category: 'ML' as Filter,
-    },
-    {
-      title: 'Gesture Flow',
-      description:
-        'Developed a real-time hand-gesture controlled virtual mouse using OpenCV and MediaPipe, supporting cursor movement, click, scroll, and drag-and-drop operations with gesture stabilization and modular architecture.',
-      tags: ['Python', 'OpenCV', 'MediaPipe Hands', 'PyAutoGUI'],
-      category: 'ML' as Filter,
-    },
-    {
-      title: 'WasteWise',
-      description:
-        'It is an AI-powered waste segregation system that automatically classifies waste images into recyclable and non-recyclable categories using computer vision. The project focuses on building a robust binary classification pipeline through dataset restructuring, image preprocessing, and convolutional neural networks, enabling accurate and efficient waste identification to support sustainable recycling practices.',
-      tags: ['CNN', 'TensorFlow', 'Keras', 'Python'],
-      category: 'ML' as Filter,
-    },
-  ];
-
-  const visibleProjects = projects.filter((p) =>
-    activeFilter === 'All Projects' ? true : p.category === activeFilter
-  );
+  // Projects are now handled by the Projects component
 
   // Contact form ref + status
   const contactFormRef = useRef<HTMLFormElement | null>(null);
@@ -385,43 +334,14 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Experiments Section */}
+      {/* Projects Section */}
       <section id="work" className="section experiments-section">
         <div className="section-content">
           <div id="work-anchor" className="section-anchor"></div>
           <br />
           <h2 id="work-title" className="section-title">Projects</h2>
 
-
-          {/* Filter Bar */}
-          <div className="filter-bar" role="tablist" aria-label="Project filters">
-            {projectFilters.map((f) => (
-              <button
-                key={f}
-                className={`filter-chip ${activeFilter === f ? 'active' : ''}`}
-                onClick={() => setActiveFilter(f)}
-                role="tab"
-                aria-selected={activeFilter === f}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
-          <div className="projects-grid">
-            {visibleProjects.map((proj) => (
-              <article key={proj.title} className="project-card">
-                <h3 className="project-title">{proj.title}</h3>
-                <p className="project-description">{proj.description}</p>
-                <div className="project-tags">
-                  {proj.tags.map((t) => (
-                    <span key={t} className="project-tag">{t}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
+          <Projects />
         </div>
       </section>
 

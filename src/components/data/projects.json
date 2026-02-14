@@ -1,0 +1,106 @@
+{
+    "totalProjects": 6,
+    "filters": [
+        "All Projects",
+        "ML",
+        "Data & Analytics",
+        "Web Development",
+        "Others"
+    ],
+    "projects": [
+        {
+            "id": "fluento",
+            "title": "Fluento",
+            "description": "Fluento is an AI-powered language pronunciation trainer that helps users improve spoken accuracy by providing text-to-speech examples, analyzing user speech, scoring pronunciation quality, and tracking progress with real-time feedback",
+            "tags": [
+                "Python",
+                "FastAPI",
+                "PyAudio",
+                "Database",
+                "HTML",
+                "CSS"
+            ],
+            "category": "ML",
+            "year": "2024",
+            "image": "https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=800&h=500&fit=crop",
+            "link": "https://fluento-converse.vercel.app/"
+        },
+        {
+            "id": "revive",
+            "title": "Revive",
+            "description": "Revive is a clean and intuitive fitness-tracking application that allows users to manage daily tasks, follow guided workouts, and monitor health metrics such as BMI—helping users stay organized and consistent in their fitness journey.",
+            "tags": [
+                "HTML",
+                "JavaScript",
+                "Tailwind CSS"
+            ],
+            "category": "Others",
+            "year": "2024",
+            "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=500&fit=crop",
+            "link": "https://revive-anshukr384.vercel.app/"
+        },
+        {
+            "id": "decibel-detect",
+            "title": "Decibel Detect",
+            "description": "Bike rental management: browsing, reservations, payments, admin dashboard, role-based access, damage reporting, dark/light themes.",
+            "tags": [
+                "PHP",
+                "MySQL",
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Tailwind CSS"
+            ],
+            "category": "Web Development",
+            "year": "2023",
+            "image": "https://images.unsplash.com/photo-1485579149621-3123dd979885?w=800&h=500&fit=crop",
+            "link": "https://decibel-detect.vercel.app/"
+        },
+        {
+            "id": "process-performance-analyzer",
+            "title": "Process Performance Analyzer",
+            "description": "Developed Process Performance Analyzer, a cross-platform tool designed to monitor system processes, track performance load, and alert users when the system is overutilized or when unused processes occupy resources.",
+            "tags": [
+                "Python",
+                "CSS3",
+                "Lucide React",
+                "Platform Module",
+                "Psutil"
+            ],
+            "category": "ML",
+            "year": "2024",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+            "link": "https://github.com/anshux-me/Process-Performance-Analyzer"
+        },
+        {
+            "id": "gesture-flow",
+            "title": "Gesture Flow",
+            "description": "Developed a real-time hand-gesture controlled virtual mouse using OpenCV and MediaPipe, supporting cursor movement, click, scroll, and drag-and-drop operations with gesture stabilization and modular architecture.",
+            "tags": [
+                "Python",
+                "OpenCV",
+                "MediaPipe Hands",
+                "PyAutoGUI"
+            ],
+            "category": "ML",
+            "year": "2023",
+            "image": "https://images.unsplash.com/photo-1593376893114-1aed528d80cf?w=800&h=500&fit=crop",
+            "link": "https://github.com/anshukr384"
+        },
+        {
+            "id": "wastewise",
+            "title": "WasteWise",
+            "description": "It is an AI-powered waste segregation system that automatically classifies waste images into recyclable and non-recyclable categories using computer vision. The project focuses on building a robust binary classification pipeline through dataset restructuring, image preprocessing, and convolutional neural networks, enabling accurate and efficient waste identification to support sustainable recycling practices.",
+            "tags": [
+                "CNN",
+                "TensorFlow",
+                "Keras",
+                "Python"
+            ],
+            "category": "ML",
+            "year": "2024",
+            "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=500&fit=crop",
+            "link": "https://github.com/anshux-me/WasteWise"
+        }
+    ]
+}
