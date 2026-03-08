@@ -76,49 +76,54 @@ const Library = () => {
       <p className="library-subtitle">Books that I've read or reading</p>
       <p className="library-total">Total read: {totalRead}</p>
 
-      {/* ===== Currently Reading ===== */}
-      <div className="library-block">
-        <h3 className="library-block-title">Currently Reading</h3>
-        <div className="library-row">
-          {readingBooks.map((book) => (
-            <div key={book.id} className="book-card">
-              <img src={book.cover} alt="Book cover" />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* ===== Blocks Grid (mirrors projects-grid) ===== */}
+      <div className="library-blocks-grid">
 
-      {/* ===== Read ===== */}
-      <div className="library-block">
-        <h3 className="library-block-title">Read</h3>
-        <div className="scroll-wrapper">
-          {/* Left Arrow */}
-          <button
-            className="scroll-arrow scroll-arrow-left"
-            onClick={scrollLeft}
-            aria-label="Scroll left"
-          >
-            ‹
-          </button>
-
-          {/* Scrollable Book Row */}
-          <div className="library-row" ref={scrollContainerRef}>
-            {readBooks.map((book) => (
+        {/* ===== Currently Reading ===== */}
+        <div className="library-block">
+          <h3 className="library-block-title">Currently Reading</h3>
+          <div className="library-row">
+            {readingBooks.map((book) => (
               <div key={book.id} className="book-card">
                 <img src={book.cover} alt="Book cover" />
               </div>
             ))}
           </div>
-
-          {/* Right Arrow */}
-          <button
-            className="scroll-arrow scroll-arrow-right"
-            onClick={scrollRight}
-            aria-label="Scroll right"
-          >
-            ›
-          </button>
         </div>
+
+        {/* ===== Read ===== */}
+        <div className="library-block">
+          <h3 className="library-block-title">Read</h3>
+          <div className="scroll-wrapper">
+            {/* Left Arrow */}
+            <button
+              className="scroll-arrow scroll-arrow-left"
+              onClick={scrollLeft}
+              aria-label="Scroll left"
+            >
+              ‹
+            </button>
+
+            {/* Scrollable Book Row */}
+            <div className="library-row" ref={scrollContainerRef}>
+              {readBooks.map((book) => (
+                <div key={book.id} className="book-card">
+                  <img src={book.cover} alt="Book cover" />
+                </div>
+              ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              className="scroll-arrow scroll-arrow-right"
+              onClick={scrollRight}
+              aria-label="Scroll right"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
       </div>
 
       {/* ===== Recommend a Book (EmailJS) ===== */}

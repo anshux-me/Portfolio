@@ -13,13 +13,6 @@
   position: relative;
 }
 
-.library-title {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-  margin-bottom: 12px;
-
-
-}
-
 .library-subtitle {
   text-decoration: underline;
   opacity: 0.65;
@@ -29,32 +22,50 @@
 
 .library-total {
   text-decoration: underline;
-  margin-bottom: clamp(32px, 4vw, 48px);
+  margin-bottom: clamp(24px, 3vw, 40px);
   opacity: 0.6;
   color: white;
 }
 
+/* ================================
+   Blocks Grid — mirrors .projects-grid
+================================ */
+
+.library-blocks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
 
 /* ================================
-   Section Blocks
+   Individual Block Card — mirrors .project-card
 ================================ */
 
 .library-block {
-  margin-bottom: clamp(24px, 3vw, 40px);
   background: rgba(40, 60, 80, 0.18);
-  border-radius: clamp(14px, 2vw, 20px);
+  border-radius: clamp(14px, 2vw, 18px);
   box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.18);
-  padding: clamp(16px, 4vw, 32px);
+  padding: clamp(16px, 3vw, 28px);
   border: 1.5px solid rgba(255, 255, 255, 0.08);
   color: white;
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.library-block:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .library-block-title {
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   font-weight: 600;
   margin-bottom: clamp(10px, 1.5vw, 16px);
   opacity: 0.92;
@@ -64,56 +75,40 @@
 /* ================================
    Horizontal Scroll Row
 ================================ */
-/* .library-wrapper {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-} */
-
-.read-row {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-}
 
 .library-row {
   display: flex;
-  gap: clamp(12px, 1.8vw, 20px);
+  gap: clamp(10px, 1.5vw, 16px);
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .library-row::-webkit-scrollbar {
-  height: 6px;
-}
-
-.library-row::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  display: none;
 }
 
 /* ================================
-   Book Card (Uniform Size)
+   Book Card — scales within grid cell
 ================================ */
 
 .book-card {
-  flex: 0 0 clamp(100px, 28vw, 150px);
-  height: clamp(150px, 42vw, 230px);
-  border-radius: clamp(10px, 1.5vw, 16px);
+  /* Fluid width: fills based on available grid column space */
+  flex: 0 0 clamp(90px, 22vw, 130px);
+  height: clamp(135px, 33vw, 200px);
+  border-radius: clamp(8px, 1.2vw, 14px);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
   scroll-snap-align: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,67 +119,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: inherit;
 }
 
-/* Hover interaction */
 .book-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-}
-
-/* ================================
-   Recommend Input
-================================ */
-
-.library-recommend {
-  display: flex;
-  align-items: center;
-  gap: clamp(8px, 1.2vw, 12px);
-  width: 100%;
-  max-width: 100%;
-  margin: clamp(24px, 3vw, 40px) 0 clamp(48px, 6vw, 72px) 0;
-  background: rgba(40, 60, 80, 0.18);
-  border-radius: clamp(12px, 1.5vw, 16px);
-  padding: clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 24px);
-  border: 1.5px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.10);
-  color: white;
-  box-sizing: border-box;
-}
-
-.library-recommend input {
-  flex: 1;
-  min-width: 0;
-  padding: clamp(10px, 1.5vw, 16px) clamp(12px, 2vw, 18px);
-  border-radius: clamp(10px, 1.2vw, 14px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  outline: none;
-  box-sizing: border-box;
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-}
-
-.library-recommend input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.library-recommend button {
-  flex-shrink: 0;
-  width: clamp(38px, 5vw, 48px);
-  height: clamp(38px, 5vw, 48px);
-  border-radius: clamp(10px, 1.2vw, 14px);
-  border: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  box-sizing: border-box;
-}
-
-.library-recommend button:hover {
-  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
 }
 
 /* ================================
@@ -196,35 +136,21 @@
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  padding: 0;
   box-sizing: border-box;
-}
-
-/* Add visual "peek" on mobile for scroll affordance */
-@media (max-width: 768px) {
-  .scroll-wrapper {
-    padding: 0 16px 0 0;
-    /* Right padding removed to show partial next card */
-  }
-
-  .library-row {
-    padding-left: 0;
-    /* Align first card to left edge */
-  }
 }
 
 .scroll-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: clamp(30px, 5vw, 40px);
+  height: clamp(30px, 5vw, 40px);
   border-radius: 50%;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(20, 30, 40, 0.85);
   backdrop-filter: blur(8px);
   color: white;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -232,7 +158,6 @@
   justify-content: center;
   transition: all 0.2s ease;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scroll-arrow:hover {
@@ -247,93 +172,125 @@
 
 .scroll-arrow-left {
   left: 0;
-  /* Position outside book area */
 }
 
 .scroll-arrow-right {
   right: 0;
-  /* Position outside book area */
-}
-
-/* Hide scrollbar on desktop for cleaner look */
-.library-row {
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE/Edge */
-}
-
-.library-row::-webkit-scrollbar {
-  display: none;
-  /* Chrome/Safari */
 }
 
 /* ================================
-   Responsive Tweaks
+   Recommend Input
+================================ */
+
+.library-recommend {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  width: 100%;
+  max-width: 100%;
+  margin: clamp(16px, 2vw, 28px) 0 clamp(40px, 5vw, 64px) 0;
+  background: rgba(40, 60, 80, 0.18);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  padding: clamp(8px, 1.2vw, 12px) clamp(14px, 2vw, 22px);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.10);
+  color: white;
+  box-sizing: border-box;
+}
+
+.library-recommend input {
+  flex: 1;
+  min-width: 0;
+  padding: clamp(10px, 1.5vw, 14px) clamp(12px, 1.8vw, 16px);
+  border-radius: clamp(10px, 1.2vw, 14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+  box-sizing: border-box;
+  font-size: clamp(0.88rem, 1.6vw, 1rem);
+}
+
+.library-recommend input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.library-recommend button {
+  flex-shrink: 0;
+  width: clamp(36px, 5vw, 46px);
+  height: clamp(36px, 5vw, 46px);
+  border-radius: clamp(10px, 1.2vw, 14px);
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.library-recommend button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ================================
+   Responsive — Tablet (≤1024px)
 ================================ */
 
 @media (max-width: 1024px) {
-  .scroll-wrapper {
-    padding: 0 40px;
+  .book-card {
+    flex: 0 0 clamp(90px, 25vw, 125px);
+    height: clamp(135px, 38vw, 190px);
   }
 
   .scroll-arrow {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     font-size: 20px;
-  }
-
-  .library-block {
-    padding: clamp(14px, 3.5vw, 28px);
   }
 }
 
-@media (max-width: 768px) {
+/* ================================
+   Responsive — Mobile (≤768px)
+   Single column, like projects on mobile
+================================ */
 
-  /* Hide arrow buttons on mobile, use touch scroll */
+@media (max-width: 768px) {
+  .library-blocks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Hide arrow buttons on mobile — use touch scroll */
   .scroll-arrow {
     display: none;
   }
 
-  .scroll-wrapper {
-    padding: 0;
-  }
-
-  .library-section {
-    padding: 10px 0 40px;
-    width: 100%;
-    max-width: 100%;
-  }
-
   .library-block {
     padding: 16px;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .library-block-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin-bottom: 12px;
   }
 
   .library-row {
     gap: 12px;
-    padding-right: 0;
   }
 
   .book-card {
-    flex: 0 0 clamp(115px, 36vw, 135px);
-    height: clamp(175px, 54vw, 205px);
+    flex: 0 0 clamp(110px, 34vw, 135px);
+    height: clamp(165px, 51vw, 200px);
   }
 
   .library-recommend {
-    padding: 10px 16px;
-    margin-bottom: 50px;
+    padding: 10px 14px;
+    margin-bottom: 48px;
   }
 
   .library-recommend input {
-    padding: 12px 14px;
-    font-size: 0.95rem;
+    padding: 11px 13px;
+    font-size: 0.93rem;
   }
 
   .library-recommend button {
@@ -342,42 +299,41 @@
   }
 }
 
+/* ================================
+   Responsive — Small Mobile (≤480px)
+================================ */
+
 @media (max-width: 480px) {
-  .library-title {
-    font-size: clamp(1.8rem, 7vw, 2.6rem);
-  }
-
-  .library-block-title {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-
   .library-block {
     padding: 14px;
   }
 
+  .library-block-title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
   .book-card {
-    flex: 0 0 clamp(105px, 40vw, 125px);
-    height: clamp(160px, 60vw, 190px);
+    flex: 0 0 clamp(100px, 38vw, 120px);
+    height: clamp(152px, 57vw, 182px);
   }
 
   .library-row {
     gap: 10px;
-    padding-right: 0;
   }
 
   .library-recommend {
-    padding: 8px 14px;
-    margin-bottom: 40px;
+    padding: 8px 12px;
+    margin-bottom: 36px;
   }
 
   .library-recommend input {
-    padding: 10px 12px;
-    font-size: 0.9rem;
+    padding: 10px 11px;
+    font-size: 0.88rem;
   }
 
   .library-recommend button {
-    width: 38px;
-    height: 38px;
+    width: 37px;
+    height: 37px;
   }
 }

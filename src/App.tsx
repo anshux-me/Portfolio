@@ -4,8 +4,8 @@ import IntroOverlay from "./components/intro";
 import React, { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import LightRays from './components/LightRays';
+import Navbar from './components/Navbar';
 import './App.css';
-
 
 import { icons } from './assets/icons';
 import LibraryGrid from './components/Library';
@@ -37,6 +37,7 @@ interface NavLink {
 }
 
 const App: React.FC = () => {
+  const heroRef = useRef<HTMLElement>(null);
   const [currentTime, setCurrentTime] = useState('00:00');
 
   const navLinks: NavLink[] = [
@@ -186,9 +187,10 @@ const App: React.FC = () => {
 
   return (
     <main className="container">
+      <Navbar heroRef={heroRef} onNavClick={scrollToSection} />
       <LightRays raysColor="#ffffff" raysOrigin="top-center" raysSpeed={1} followMouse={true} className="page-lightrays" />
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" ref={heroRef}>
         <div className="hero-content">
           <h1 className="hero-title">Anshu</h1>
 
