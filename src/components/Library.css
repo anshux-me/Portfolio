@@ -78,10 +78,13 @@
 
 .library-row {
   display: flex;
-  gap: clamp(10px, 1.5vw, 16px);
+  gap: clamp(16px, 1.5vw, 16px);
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   padding-bottom: 6px;
+  /* padding-right: 100px; */
+  /* top padding so the hovered book lift is visible */
+  padding-top: 2px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   width: 100%;
@@ -96,23 +99,35 @@
 }
 
 /* ================================
-   Book Card — scales within grid cell
+   Book Item — wrapper for card + status bubble
+================================ */
+
+.book-item {
+  flex: 0 0 clamp(90px, 22vw, 130px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  scroll-snap-align: start;
+  /* top padding gives hover headroom so the card top isn't clipped */
+  padding-top: 8px;
+}
+
+/* ================================
+   Book Card — the image container
 ================================ */
 
 .book-card {
-  /* Fluid width: fills based on available grid column space */
-  flex: 0 0 clamp(90px, 22vw, 130px);
+  display: block;
+  width: 100%;
   height: clamp(135px, 33vw, 200px);
   border-radius: clamp(8px, 1.2vw, 14px);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
-  scroll-snap-align: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .book-card img {
@@ -120,6 +135,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
+  display: block;
 }
 
 .book-card:hover {
@@ -128,54 +144,74 @@
 }
 
 /* ================================
-   Scroll Wrapper & Arrow Controls
+   Status Bubble
 ================================ */
 
-.scroll-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
+.book-status-bubble {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
-.scroll-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(30px, 5vw, 40px);
-  height: clamp(30px, 5vw, 40px);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(20, 30, 40, 0.85);
-  backdrop-filter: blur(8px);
-  color: white;
-  font-size: clamp(18px, 3vw, 24px);
-  cursor: pointer;
-  z-index: 10;
+.book-status-bubble.status-reading {
+  background: rgba(96, 165, 250, 0.12);
+  color: rgba(147, 197, 253, 0.85);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+.book-status-bubble.status-paused {
+  background: rgba(251, 191, 36, 0.1);
+  color: rgba(253, 224, 132, 0.8);
+  border-color: rgba(251, 191, 36, 0.18);
+}
+
+/* ================================
+   Scroll Row Layout — arrow | books | arrow
+================================ */
+
+.scroll-row-layout {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  gap: clamp(4px, 1vw, 10px);
+  width: 100%;
+}
+
+/* ================================
+   Bare Arrow Buttons
+================================ */
+
+.scroll-arrow {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 2px;
+  transition: color 0.2s ease, transform 0.15s ease;
+  user-select: none;
+  /* vertically centre with book cards */
+  align-self: center;
+  /* optical nudge so the glyph sits on the card mid-line */
+  margin-top: -12px;
 }
 
 .scroll-arrow:hover {
-  background: rgba(30, 45, 60, 0.95);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-  transform: translateY(-50%) scale(1.05);
+  color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.15);
 }
 
 .scroll-arrow:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.scroll-arrow-left {
-  left: 0;
-}
-
-.scroll-arrow-right {
-  right: 0;
+  transform: scale(0.92);
 }
 
 /* ================================
@@ -237,15 +273,16 @@
 ================================ */
 
 @media (max-width: 1024px) {
-  .book-card {
+  .book-item {
     flex: 0 0 clamp(90px, 25vw, 125px);
+  }
+
+  .book-card {
     height: clamp(135px, 38vw, 190px);
   }
 
   .scroll-arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 20px;
+    font-size: 26px;
   }
 }
 
@@ -278,8 +315,11 @@
     gap: 12px;
   }
 
-  .book-card {
+  .book-item {
     flex: 0 0 clamp(110px, 34vw, 135px);
+  }
+
+  .book-card {
     height: clamp(165px, 51vw, 200px);
   }
 
@@ -313,8 +353,11 @@
     margin-bottom: 10px;
   }
 
-  .book-card {
+  .book-item {
     flex: 0 0 clamp(100px, 38vw, 120px);
+  }
+
+  .book-card {
     height: clamp(152px, 57vw, 182px);
   }
 

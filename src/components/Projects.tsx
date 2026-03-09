@@ -5,6 +5,15 @@
 import { useState } from "react";
 import "./Projects.css";
 import projectsData from "./data/projects.json";
+import p1 from "../assets/pimg/p1.png";
+import p2 from "../assets/pimg/p2.png";
+import p3 from "../assets/pimg/p3.png";
+
+const projectImages: Record<string, string> = {
+    "fluento": p1,
+    "revive": p2,
+    "decibel-detect": p3,
+};
 
 type Filter = "All Projects" | "ML" | "Data & Analytics" | "Web Development" | "Others";
 
@@ -51,7 +60,7 @@ const Projects = () => {
                         {/* Project Image */}
                         <div className="project-image-wrapper">
                             <img
-                                src={proj.image}
+                                src={projectImages[proj.id] ?? proj.image}
                                 alt={proj.title}
                                 className="project-image"
                             />

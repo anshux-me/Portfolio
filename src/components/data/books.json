@@ -2,144 +2,142 @@
   "totalRead": 23,
   "books": [
     {
-    "id": "cant-hurt-me",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1536184191i/41721428.jpg",
-    "status": "reading"
+      "id": "cant-hurt-me",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1536184191i/41721428.jpg",
+      "link": "https://www.goodreads.com/book/show/41721428-can-t-hurt-me",
+      "status": "reading"
     },
     {
-    "id": "yellowface",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1671336608i/62047984.jpg",
-    "status": "read"
- 
+      "id": "yellowface",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1671336608i/62047984.jpg",
+      "link": "https://www.goodreads.com/book/show/62047984-yellowface",
+      "status": "read"
     },
     {
-    "id": "After Dark",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1437952316i/17803.jpg",
-    "status": "read"
+      "id": "After Dark",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1437952316i/17803.jpg",
+      "link": "https://www.goodreads.com/book/show/17803.After_Dark",
+      "status": "read"
     },
     {
-    "id": "Norwegian Wood",
-    "cover": "https://cdn.penguin.co.in/wp-content/uploads/2023/06/9780099448822-3.jpg",
-    "status": "read"
-    
+      "id": "Norwegian Wood",
+      "cover": "https://cdn.penguin.co.in/wp-content/uploads/2023/06/9780099448822-3.jpg",
+      "link": "https://www.goodreads.com/book/show/11929.Norwegian_Wood",
+      "status": "read"
     },
     {
-    "id": "Palace of Illusions",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1679444666i/1774836.jpg",
-    "status": "read"
+      "id": "Palace of Illusions",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1679444666i/1774836.jpg",
+      "link": "https://www.goodreads.com/book/show/1774836.Palace_of_Illusions",
+      "status": "read"
     },
     {
-    "id": "Before the coffee gets cold",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704153539i/44421460.jpg",
-    "status": "read"
+      "id": "Before the coffee gets cold",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704153539i/44421460.jpg",
+      "link": "https://www.goodreads.com/book/show/44421460.Before_the_Coffee_Gets_Cold",
+      "status": "read"
     },
     {
-    "id": "Looking for Alaska",
-    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmu4Y79qB5ZNdDPFFD154H-SXmvl79KPEkyXcAKNxBgoRmLhIUvQk1opkcPNTTAIkoPnx42mdHTDM31SOyQ0gm6t1-mBXzASj3FCDkvstG&s=10",
-    "status": "read"
+      "id": "Looking for Alaska",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmu4Y79qB5ZNdDPFFD154H-SXmvl79KPEkyXcAKNxBgoRmLhIUvQk1opkcPNTTAIkoPnx42mdHTDM31SOyQ0gm6t1-mBXzASj3FCDkvstG&s=10",
+      "link": "https://www.goodreads.com/book/show/99865.Looking_for_Alaska",
+      "status": "read"
     },
     {
-    "id": "Almanakh of Naval Ravikant",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1598011736i/54898389.jpg",
-    "status": "read"
+      "id": "Almanakh of Naval Ravikant",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1598011736i/54898389.jpg",
+      "link": "https://www.goodreads.com/book/show/54898389-the-almanack-of-naval-ravikant",
+      "status": "read"
     },
     {
-    "id": "How to win friends and influence people",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1442726934i/4865.jpg",
-    "status": "read"
-    
+      "id": "How to win friends and influence people",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1442726934i/4865.jpg",
+      "link": "https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People",
+      "status": "read"
     },
     {
-    "id": "King of wrath",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1742667348i/217206738.jpg",
-    "status": "read"
+      "id": "King of wrath",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1742667348i/217206738.jpg",
+      "link": "https://www.goodreads.com/book/show/217206738-king-of-wrath",
+      "status": "read"
     },
     {
-    "id": "The Love Hypothesis",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1747519081i/56732449.jpg",
-    "status": "read"
-    
+      "id": "The Love Hypothesis",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1747519081i/56732449.jpg",
+      "link": "https://www.goodreads.com/book/show/56732449-the-love-hypothesis",
+      "status": "read"
     },
     {
-    "id": "The monk who sold his ferrari",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388189325i/43877.jpg",
-    "status": "read"
-    
-    },
-
-    {
-    "id": "The subtle art of not giving a f*ck",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1465761302i/28257707.jpg",
-    "status": "read"
+      "id": "The monk who sold his ferrari",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388189325i/43877.jpg",
+      "link": "https://www.goodreads.com/book/show/43877.The_Monk_Who_Sold_His_Ferrari",
+      "status": "read"
     },
     {
-    "id": "ikigai",
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680629184i/124950497.jpg",
-    "status": "read"
+      "id": "The subtle art of not giving a f*ck",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1465761302i/28257707.jpg",
+      "link": "https://www.goodreads.com/book/show/28257707-the-subtle-art-of-not-giving-a-f-ck",
+      "status": "read"
     },
     {
-    "id": "The Hidden Hindu",
-    
-    
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1667241135i/55751155.jpg",
-    "status": "read"
-    
+      "id": "ikigai",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680629184i/124950497.jpg",
+      "link": "https://www.goodreads.com/book/show/124950497-ikigai",
+      "status": "read"
     },
     {
-    "id": "After the quake",
-    
-    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqknl8EMmO1bo0ne1pe5WqaFVSbMuhOLYU4dWy1Mhm2Av4zaNl1duxmGVC-nHYrbPublC9l0qImmWsjJswksGiPLhQK4pmKhAGvu8Cxn_r&s=10",
-    "status": "read"
-
+      "id": "The Hidden Hindu",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1667241135i/55751155.jpg",
+      "link": "https://www.goodreads.com/book/show/55751155-the-hidden-hindu",
+      "status": "read"
     },
     {
-    "id": "Song of archilles",
-    
-    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4PJ4z21yIxX6r8IUxfhaDz0Pip0qP4QykUMfnD4OXQtda0g9Aw9IE6GtFzBkXz8Z95tmaBYFiXX4CYFmaKPdm__polvWmP3p7xYeXsFtLQ&s=10",
-    "status": "paused"
-    },
-    
-    {
-    "id": "The Mountain is You",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1590806892i/53642699.jpg",
-    "status": "read"
+      "id": "After the quake",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqknl8EMmO1bo0ne1pe5WqaFVSbMuhOLYU4dWy1Mhm2Av4zaNl1duxmGVC-nHYrbPublC9l0qImmWsjJswksGiPLhQK4pmKhAGvu8Cxn_r&s=10",
+      "link": "https://www.goodreads.com/book/show/17803.After_Dark",
+      "status": "read"
     },
     {
-    "id": "3 mistakes of my life",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1216107646i/3320520.jpg",
-    "status": "read"
+      "id": "Song of archilles",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4PJ4z21yIxX6r8IUxfhaDz0Pip0qP4QykUMfnD4OXQtda0g9Aw9IE6GtFzBkXz8Z95tmaBYFiXX4CYFmaKPdm__polvWmP3p7xYeXsFtLQ&s=10",
+      "link": "https://www.goodreads.com/book/show/13623848-the-song-of-achilles",
+      "status": "paused"
     },
     {
-    "id": "Psycology of money",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1581527774i/41881472.jpg",
-    "status": "read"
+      "id": "The Mountain is You",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1590806892i/53642699.jpg",
+      "link": "https://www.goodreads.com/book/show/53642699-the-mountain-is-you",
+      "status": "read"
     },
     {
-    "id": "The Thousand splendid Suns",
-
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655336738i/128029.jpg",
-    "status": "read"
+      "id": "3 mistakes of my life",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1216107646i/3320520.jpg",
+      "link": "https://www.goodreads.com/book/show/3320520-the-3-mistakes-of-my-life",
+      "status": "read"
     },
     {
-    "id": "Alchemist",
-
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
-    "status": "read"
+      "id": "Psycology of money",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1581527774i/41881472.jpg",
+      "link": "https://www.goodreads.com/book/show/41881472-the-psychology-of-money",
+      "status": "read"
     },
     {
-    "id": "2 states",
-
-
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1255292027i/6969361.jpg",
-    "status": "read"
+      "id": "The Thousand splendid Suns",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655336738i/128029.jpg",
+      "link": "https://www.goodreads.com/book/show/128029.The_Thousand_Splendid_Suns",
+      "status": "read"
+    },
+    {
+      "id": "Alchemist",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
+      "link": "https://www.goodreads.com/book/show/18144590.The_Alchemist",
+      "status": "read"
+    },
+    {
+      "id": "2 states",
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1255292027i/6969361.jpg",
+      "link": "https://www.goodreads.com/book/show/6969361-2-states?from_search=true&from_srp=true&qid=6h6WOoHPRZ&rank=1",
+      "status": "read"
     }
-    
-   
   ]
 }

@@ -1,5 +1,5 @@
 // ================================
-// Library Section 
+// Library Section
 // ================================
 
 import { useRef, useState } from "react";
@@ -10,14 +10,18 @@ import booksData from "./data/books.json";
 type Book = {
   id: string;
   cover: string;
-  status: "reading" | "read";
+  link: string;
+  status: "reading" | "read" | "paused";
+};
+
+const statusLabel: Record<string, string> = {
+  reading: "Reading",
+  read: "Read",
+  paused: "Paused",
 };
 
 const Library = () => {
   const { books, totalRead } = booksData;
-
-  const readingBooks = books.filter((b) => b.status === "reading");
-  const readBooks = books.filter((b) => b.status === "read");
 
   // Recommendation form state
   const recommendFormRef = useRef<HTMLFormElement | null>(null);
@@ -33,10 +37,10 @@ const Library = () => {
 
     try {
       await emailjs.sendForm(
-        "service_lf1wyti", // service ID
-        "template_wspwju1", // recommendation template
+        "service_lf1wyti",
+        "template_wspwju1",
         recommendFormRef.current,
-        "RxnQkd68McQZKFvcd" // public key
+        "RxnQkd68McQZKFvcd"
       );
 
       setRecommendResult("Thank you for the recommendation!");
@@ -49,55 +53,32 @@ const Library = () => {
     }
   };
 
-  // Scroll functionality for Read books section
+  // Scroll ref for the single merged row
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -300,
-        behavior: "smooth",
-      });
-    }
+    scrollContainerRef.current?.scrollBy({ left: -300, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 300,
-        behavior: "smooth",
-      });
-    }
+    scrollContainerRef.current?.scrollBy({ left: 300, behavior: "smooth" });
   };
 
   return (
     <section id="library" className="library-section">
       {/* ===== Section Header ===== */}
-      <p className="library-subtitle">Books that I've read or reading</p>
+      <p className="library-subtitle">Books that I've read or am reading</p>
       <p className="library-total">Total read: {totalRead}</p>
 
-      {/* ===== Blocks Grid (mirrors projects-grid) ===== */}
+      {/* ===== Single Library Block ===== */}
       <div className="library-blocks-grid">
-
-        {/* ===== Currently Reading ===== */}
         <div className="library-block">
-          <h3 className="library-block-title">Currently Reading</h3>
-          <div className="library-row">
-            {readingBooks.map((book) => (
-              <div key={book.id} className="book-card">
-                <img src={book.cover} alt="Book cover" />
-              </div>
-            ))}
-          </div>
-        </div>
+          <h3 className="library-block-title">Library</h3>
 
-        {/* ===== Read ===== */}
-        <div className="library-block">
-          <h3 className="library-block-title">Read</h3>
-          <div className="scroll-wrapper">
-            {/* Left Arrow */}
+          <div className="scroll-row-layout">
+            {/* Left Arrow — outside scroll area */}
             <button
-              className="scroll-arrow scroll-arrow-left"
+              className="scroll-arrow"
               onClick={scrollLeft}
               aria-label="Scroll left"
             >
@@ -106,16 +87,26 @@ const Library = () => {
 
             {/* Scrollable Book Row */}
             <div className="library-row" ref={scrollContainerRef}>
-              {readBooks.map((book) => (
-                <div key={book.id} className="book-card">
-                  <img src={book.cover} alt="Book cover" />
+              {(books as Book[]).map((book) => (
+                <div key={book.id} className="book-item">
+                  <a
+                    href={book.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="book-card"
+                  >
+                    <img src={book.cover} alt={book.id} />
+                  </a>
+                  <span className={`book-status-bubble status-${book.status}`}>
+                    {statusLabel[book.status] ?? book.status}
+                  </span>
                 </div>
               ))}
             </div>
 
-            {/* Right Arrow */}
+            {/* Right Arrow — outside scroll area */}
             <button
-              className="scroll-arrow scroll-arrow-right"
+              className="scroll-arrow"
               onClick={scrollRight}
               aria-label="Scroll right"
             >
@@ -123,7 +114,6 @@ const Library = () => {
             </button>
           </div>
         </div>
-
       </div>
 
       {/* ===== Recommend a Book (EmailJS) ===== */}
@@ -132,7 +122,6 @@ const Library = () => {
         className="library-recommend"
         onSubmit={handleRecommendSubmit}
       >
-        {/* ✅ FIX 1: name must be "message" */}
         <input
           type="text"
           name="message"
@@ -141,7 +130,6 @@ const Library = () => {
           disabled={sendingRecommendation}
         />
 
-        {/* ✅ FIX 2: send time explicitly */}
         <input
           type="hidden"
           name="time"

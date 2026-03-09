@@ -135,8 +135,8 @@ body {
   position: relative;
   max-width: 420px;
   margin: 0 auto 40px;
-  border-radius: 10px;
-  padding: 6px;
+  border-radius: 18px;
+  padding: 10px;
   /* apply frosted glass like the social container */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(255, 255, 255, 0.2);

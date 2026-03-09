@@ -1,6 +1,4 @@
 /* ==================== Floating Pill Navbar ==================== */
-/* A centered floating pill that appears after the hero scrolls away.
-   Matches the dark frosted-glass card style used in the social navbar. */
 
 .pill-navbar {
     position: fixed;
@@ -8,46 +6,52 @@
     left: 50%;
     transform: translateX(-50%) translateY(-140%);
     z-index: 9999;
-    /* Slide + fade transition */
     transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
         opacity 0.36s ease;
     opacity: 0;
     pointer-events: none;
     will-change: transform, opacity;
-
 }
 
-/* Visible — slides down into place */
 .pill-show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Hidden — slides back above viewport */
 .pill-hide {
     transform: translateX(-50%) translateY(-140%);
     opacity: 0;
     pointer-events: none;
 }
 
-/* ── The pill container itself — matches social-icons-container style ── */
+/* ── The pill container itself ── */
 .pill-inner {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    padding: 12px 20px;
+    gap: 12px;
+    /* Slightly tighter gap for a cohesive pill */
+    padding: 10px 16px;
     border-radius: 18px;
-    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)); */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    /* Slightly rounder edges */
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03); */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px) saturate(1.05);
+    /* THE FIX: Semi-transparent background to allow the blur to show through */
+    background: rgba(12, 11, 21, 0.6);
+
+    /* THE UPGRADE: "Light Catcher" borders. Top is brighter than bottom */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    /* Deeper shadow to detach from background */
+
+    /* Stronger blur to distort the light rays behind it */
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px) saturate(1.2);
     background-clip: padding-box;
 }
 
@@ -56,56 +60,74 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 7px 13px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 14px;
+    border-radius: 14px;
+
+    /* Removed default borders and shadows for a cleaner, flush look */
+    border: 1px solid transparent;
     background: transparent;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.6);
+    /* Dimmer default text */
+
     cursor: pointer;
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: color 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.15s ease;
+
+    transition: all 0.3s ease;
 }
 
-.pill-btn:hover {
+/* Hovering over inactive buttons */
+.pill-btn:hover:not(.pill-btn-active) {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.12);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
 }
 
 .pill-btn:active {
     transform: scale(0.96);
 }
 
-/* Active / current section highlight */
-.pill-btn-active {
-    color: #b1b0b0;
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.14);
-}
 
 .pill-btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.85;
     flex-shrink: 0;
+}
+
+/* ── Active / current section highlight (The Bioluminescent Glow) ── */
+/* ── Active / current section highlight (The Minimalist Frost) ── */
+.pill-btn-active {
+    color: #ffffff;
+    /* Pure white text for maximum contrast */
+    background: rgba(255, 255, 255, 0.12);
+    /* Brighter frosted background */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    /* Crisp, visible white border */
+
+    /* A subtle inner highlight for the glass edge, and a soft drop shadow */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+
+    font-weight: 600;
+    /* Slightly bolder text to emphasize it's active */
+}
+
+/* Ensure the icon matches the pure white color when active */
+.pill-btn-active .pill-btn-icon svg {
+    stroke: #ffffff;
+    fill: #ffffff;
+    /* Adjust depending on your SVG properties */
 }
 
 .pill-btn-label {
     line-height: 1;
 }
 
-/* ── Responsive: hide labels on smaller screens, show only icons ── */
+/* ── Responsive ── */
 @media (max-width: 520px) {
     .pill-btn-label {
         display: none;
