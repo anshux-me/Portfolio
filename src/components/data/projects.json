@@ -42,7 +42,7 @@
         {
             "id": "decibel-detect",
             "title": "Decibel Detect",
-            "description": "Bike rental management: browsing, reservations, payments, admin dashboard, role-based access, damage reporting, dark/light themes.",
+            "description": "Decibel Detect is a noise monitoring project designed to help detect and control excessive sound levels in environments such as classrooms, hospitals, offices, and residential areas. The system is useful for maintaining a quiet and safe atmosphere by identifying when noise exceeds acceptable limits, making it helpful for noise pollution monitoring and awareness.",
             "tags": [
                 "PHP",
                 "MySQL",

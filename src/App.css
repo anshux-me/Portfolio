@@ -112,7 +112,7 @@ body {
 .hero-title {
   font-family: 'Caveat', 'Playfair Display', cursive;
   font-size: clamp(60px, 12vw, 140px);
-  font-weight: 200;
+  font-weight: 50;
   margin-bottom: 16px;
   letter-spacing: -1px;
   line-height: 1;
@@ -737,10 +737,12 @@ img.skill-icon {
 }
 
 .contact-section .section-title,
-.contact-section .contact-subtitle {
+.contact-section {
   /* text-align: center; */
   padding-left: 110px;
 }
+
+
 
 
 /* contact section uses the shared `.section-content` rules above */
@@ -748,7 +750,8 @@ img.skill-icon {
   font-size: 0.95rem;
   opacity: 0.75;
   margin-bottom: 2.5rem;
-  max-width: 480px;
+  max-width: 500px;
+  padding-left: 110px;
 }
 
 

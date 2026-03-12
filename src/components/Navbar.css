@@ -10,7 +10,25 @@
         opacity 0.36s ease;
     opacity: 0;
     pointer-events: none;
-    will-change: transform, opacity;
+    /* Note: no will-change here — it creates a compositing layer that blocks backdrop-filter */
+
+    /* ── Glassmorphism lives here so backdrop-filter works correctly ── */
+    border-radius: 18px;
+    background: rgba(10, 15, 25, 0.25);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    -webkit-backdrop-filter: blur(24px) saturate(1.6) brightness(1.05);
+    backdrop-filter: blur(24px) saturate(1.6) brightness(1.05);
+    background-clip: padding-box;
 }
 
 .pill-show {
@@ -25,34 +43,14 @@
     pointer-events: none;
 }
 
-/* ── The pill container itself ── */
+/* ── The pill container itself — pure flex layout only ── */
 .pill-inner {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    /* Slightly tighter gap for a cohesive pill */
     padding: 10px 16px;
-    border-radius: 18px;
-    /* Slightly rounder edges */
-
-    /* THE FIX: Semi-transparent background to allow the blur to show through */
-    background: rgba(12, 11, 21, 0.6);
-
-    /* THE UPGRADE: "Light Catcher" borders. Top is brighter than bottom */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-    /* Deeper shadow to detach from background */
-
-    /* Stronger blur to distort the light rays behind it */
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px) saturate(1.2);
-    background-clip: padding-box;
 }
 
 /* ── Individual nav buttons ── */

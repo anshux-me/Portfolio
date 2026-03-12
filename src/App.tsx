@@ -44,7 +44,7 @@ const App: React.FC = () => {
     {
       id: 'about-anchor',
       title: 'About',
-      description: 'you can call me Anshu',
+      description: 'You can call me Anshu',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -55,7 +55,7 @@ const App: React.FC = () => {
     {
       id: 'work-anchor',
       title: 'Work',
-      description: 'experiments & projects',
+      description: 'Experiments & projects',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -66,7 +66,7 @@ const App: React.FC = () => {
     {
       id: 'library-anchor',
       title: 'Library',
-      description: "Books i've read",
+      description: "Books I've read",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -77,7 +77,7 @@ const App: React.FC = () => {
     {
       id: 'contact-anchor',
       title: 'Contact',
-      description: "let's connect",
+      description: "Let's connect",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -87,7 +87,7 @@ const App: React.FC = () => {
     {
       id: 'resume',
       title: 'Resume',
-      description: 'Look at my resume',
+      description: 'View my resume',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -365,7 +365,7 @@ const App: React.FC = () => {
           <br />
           <h2 id="contact-title" className="section-title">Contact</h2>
 
-          <p className="contact-subtitle">Let's connect -- Looking forward to work together.</p>
+          <p className="contact-subtitle">Let's Connect - Looking Forward to Working Together.</p>
 
 
           <form ref={contactFormRef} className="contact-form" onSubmit={handleContactSubmit}>
