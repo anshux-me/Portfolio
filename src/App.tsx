@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 
 import { icons } from './assets/icons';
+import titleSvg from './assets/pimg/title.png';
 import LibraryGrid from './components/Library';
 import Projects from './components/Projects';
 // Icons from lucide-react (install with `npm i lucide-react` if missing)
@@ -152,6 +153,10 @@ const App: React.FC = () => {
   };
 
   const handleResultClick = (sectionId: string) => {
+    if (sectionId === 'resume') {
+      window.open('https://drive.google.com/file/d/1T0x-dh2GVFb0GV6qkFvsAJ0G37tvl1sH/view?usp=sharing', '_blank', 'noopener,noreferrer');
+      return;
+    }
     scrollToSection(sectionId);
   };
 
@@ -192,7 +197,7 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <section className="hero" ref={heroRef}>
         <div className="hero-content">
-          <h1 className="hero-title">Anshu</h1>
+          <img src={titleSvg} alt="Anshu" className="hero-title-svg" />
 
           {/* Simple static navigation card */}
           <div className="nav-card">

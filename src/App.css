@@ -89,6 +89,7 @@ body {
   padding: 80px 24px 100px;
   padding-top: calc(60px + 6vh);
   overflow: hidden;
+  /* gap: clamp(16px, 4vh, 40px); */
 }
 
 .light-rays-bg {
@@ -109,6 +110,7 @@ body {
   z-index: 3;
 }
 
+/* 
 .hero-title {
   font-family: 'Caveat', 'Playfair Display', cursive;
   font-size: clamp(60px, 12vw, 140px);
@@ -117,6 +119,23 @@ body {
   letter-spacing: -1px;
   line-height: 1;
   color: #f5f5f5;
+} */
+
+.hero-title-svg {
+  width: clamp(200px, 25vw, 400px);
+  height: auto;
+  display: block;
+  /* position: center; */
+  /* Negative margin cancels the ~33% transparent bottom whitespace baked into the PNG canvas.
+     clamp scales proportionally with the responsive image width. */
+  margin: 0 auto clamp(-55px, -10vw, -140px);
+  /* SVG is black-filled — invert to white for the dark background */
+  filter: invert(1);
+  user-select: none;
+  pointer-events: none;
+  margin-bottom: 5px;
+
+
 }
 
 .hero-subtitle {
