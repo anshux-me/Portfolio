@@ -154,7 +154,7 @@ const App: React.FC = () => {
 
   const handleResultClick = (sectionId: string) => {
     if (sectionId === 'resume') {
-      window.open('https://drive.google.com/file/d/1T0x-dh2GVFb0GV6qkFvsAJ0G37tvl1sH/view?usp=sharing', '_blank', 'noopener,noreferrer');
+      window.open('https://drive.google.com/file/d/1OFy3VFIpjWa-ky3mz1nzCdw59-DDRQ_4/view?usp=drive_link');
       return;
     }
     scrollToSection(sectionId);
@@ -244,13 +244,11 @@ const App: React.FC = () => {
 
           <div className="about-text">
             <p>
-              Hi! I'm Anshu, a passionate developer with a passion for building useful and innovative solutions.
-              I specilize in data science, machine learning and web development.
-              Currently exploring devops tools and cloud computing.
+              I'm Anshu — a student, developer, and relentless problem-solver who finds satisfaction in turning complex ideas into working systems.
+              My work lives at the intersection of Data Science, Machine Learning, and Full Stack Development — whether that's building intelligent backends, training models, or crafting seamless user experiences. I don't just write code; I engineer solutions that make sense.
             </p>
-            <p>
-              Throughout my journey, I've been guided by a simple belief: technology should feel natural and intuitive.
-            </p>
+            <p>I believe the best products are born from curiosity and
+              iteration — and that's exactly how I approach every project I touch.            </p>
           </div>
 
           {/* Technical Skills */}
