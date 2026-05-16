@@ -11,6 +11,7 @@ import { icons } from './assets/icons';
 import titleSvg from './assets/pimg/title.png';
 import LibraryGrid from './components/Library';
 import Projects from './components/Projects';
+import AboutMe from './components/AboutMe';
 // Icons from lucide-react (install with `npm i lucide-react` if missing)
 
 import {
@@ -155,7 +156,7 @@ const App: React.FC = () => {
   const handleResultClick = (sectionId: string) => {
     if (sectionId === 'resume') {
       window.open('https://drive.google.com/file/d/1OFy3VFIpjWa-ky3mz1nzCdw59-DDRQ_4/view?usp=drive_link');
-      return;
+    
     }
     scrollToSection(sectionId);
   };
@@ -240,16 +241,11 @@ const App: React.FC = () => {
         <div className="section-content">
           <div id="about-anchor" className="section-anchor"></div>
           <br />
+
           <h2 id="about-title" className="section-title">About Me</h2>
 
-          <div className="about-text">
-            <p>
-              I'm Anshu — a student, developer, and relentless problem-solver who finds satisfaction in turning complex ideas into working systems.
-              My work lives at the intersection of Data Science, Machine Learning, and Full Stack Development — whether that's building intelligent backends, training models, or crafting seamless user experiences. I don't just write code; I engineer solutions that make sense.
-            </p>
-            <p>I believe the best products are born from curiosity and
-              iteration — and that's exactly how I approach every project I touch.            </p>
-          </div>
+          {/* New 2-col layout */}
+          <AboutMe />
 
           {/* Technical Skills */}
           <div className="technical-skills hsection">
