@@ -1,6 +1,12 @@
 {
-  "totalRead": 23,
+  "totalRead": 24,
   "books": [
+    {
+      "id": "Metamorphosis",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2gO7Yf1GoUL2Vye7_zZpirQtnJmMV2mSYw&s",
+      "link": "https://www.goodreads.com/book/show/485894.The_Metamorphosis",
+      "status": "read"
+    },
     {
       "id": "cant-hurt-me",
       "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1536184191i/41721428.jpg",
