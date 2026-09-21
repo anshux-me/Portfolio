@@ -94,8 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, onNavClick }) => {
 
     return (
         <nav className={`pill-navbar ${visible ? 'pill-show' : 'pill-hide'}`} aria-label="Main navigation">
-            <div className="layout-container pill-navbar-container">
-                <div className="pill-inner">
+            <div className="pill-inner">
 
                 {/* Logo — "A" avatar */}
                 {/* <button
@@ -123,7 +122,6 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, onNavClick }) => {
                         <span className="pill-btn-label">{item.label}</span>
                     </button>
                 ))}
-                </div>
             </div>
         </nav>
     );
