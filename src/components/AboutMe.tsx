@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import profileImg from '../assets/pimg/profile.png';
 
 // ─── Animation variants ───────────────────────────────────────────────────────
@@ -75,6 +76,18 @@ const AboutMe: React.FC = () => {
               <span className="about-status-dot" />
               <span>Open to opportunities</span>
             </div>
+          </div>
+
+          <div className="about-social-links" aria-label="Contact links">
+            <a href="mailto:anshukr384@example.com" aria-label="Email" title="Email">
+              <Mail size={20} />
+            </a>
+            <a href="https://github.com/anshux-me" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/anshuxme/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <Linkedin size={20} />
+            </a>
           </div>
         </motion.div>
       </motion.div>
