@@ -2,10 +2,16 @@
   "totalRead": 26,
   "books": [
     {
+      "id": "Don't sweat the small stuff",
+      "cover": "https://images-na.ssl-images-amazon.com/images/I/71ojNg67YmL._AC_UL600_SR600,600_.jpg",
+      "link": "https://www.goodreads.com/work/quotes/164688-don-t-sweat-the-small-stuff-for-men",
+      "status": "reading"
+    },
+    {
       "id": "Courage to be Disliked",
       "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1545421684i/43306206.jpg",
       "link": "https://www.goodreads.com/book/show/43306206-the-courage-to-be-disliked",
-      "status": "reading"
+      "status": "paused"
     },
     {
       "id": "King of Sloth",
